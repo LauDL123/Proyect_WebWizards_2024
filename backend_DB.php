@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost"; // Cambia esto si tu servidor no está en localhost
+$servername = "localhost";
 $username = "tu_usuario";
 $password = "tu_contraseña";
 $dbname = "tu_base_de_datos";
