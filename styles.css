@@ -1,0 +1,119 @@
+/* Estilos generales */
+.container {
+    padding: 20px;
+}
+.producto {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.producto h3 {
+    margin-bottom: 10px;
+}
+.producto p {
+    margin-bottom: 10px;
+}
+#mensaje_formulario {
+    display: none;
+}
+#btn_mostrar_formulario {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+}
+#btn_mostrar_formulario:hover {
+    background-color: #218838;
+}
+
+/* Estilos para la barra de menú */
+.nav__responsive-ul {
+    display: none;
+}
+
+.nav {
+    background-color: rgb(47, 25, 189);
+}
+
+.nav__li {
+    display: inline-block;
+    padding: 12px;
+    color: #fff;
+}
+
+.nav__li:hover > a {
+    color: #bbb;
+}
+.nav__li:hover > i {
+    color: #bbb;
+}
+
+.nav__li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav__li i {
+    width: 30px;
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.nav__responsive-button-container {
+    position: absolute;
+    width: 100%;
+    font-size: 25px;
+    background-color: #69c;
+    margin-top: -37px;
+}
+
+.nav__responsive-button {
+    padding: 6px 20px;
+    text-align: right;
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .nav_ul {
+        display: none;
+    }
+   
+    .nav {
+        height: 37px;
+        width: 100%;
+        background-color: #69c;
+    }
+
+    .nav__responsive-ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        background-color: #9bf;
+        height: 100%;
+        margin-top: 37px;
+        padding-top: 37px;
+    }
+
+    .nav__responsive-li {
+        width: 100%;
+        padding: 9px 20px;
+    }
+
+    .nav__responsive-li i {
+        box-sizing: border-box;
+        text-align: center;
+        margin-right: 5px;
+        width: 30px;
+        color: #016;
+    }
+
+    .nav__responsive-li a { 
+        color: #016;
+        text-decoration: none;
+    }
+}

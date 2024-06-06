@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+    <link rel="stylesheet" type="text/css" href="css_Login.css" />
+</head>
+<body>
+   <div class="container">
+       <!-- Formulario de Inicio de Sesión -->
+       <div class="Login_Duenio_container">
+           <h2>Iniciar Sesión 🔒</h2>
+           <form action="backend_Login.php" method="POST">
+              <div class="input-group">
+                <label for="login_username">Usuario 🔓</label>
+                <input type="text" id="login_username" name="username" required>
+              </div>
+              <div class="input-group">
+                <label for="login_password">Contraseña 🔑</label>
+                <input type="password" id="login_password" name="password" required>
+              </div>
+              <button type="submit">Ingresar</button>
+           </form>
+       </div>     
+
+       <!-- Formulario de Registro -->
+       <div class="Register_Duenio_container">
+           <h2>Registrar 🔏</h2>
+           <form action="backend_Register.php" method="POST">
+              <div class="input-group">
+                <label for="register_username">Usuario 🔓</label>
+                <input type="text" id="register_username" name="username" required>
+              </div>
+              <div class="input-group">
+                <label for="register_password">Contraseña 🔑</label>
+                <input type="password" id="register_password" name="password" required>
+              </div>
+              <button type="submit">Registrar</button>
+           </form>
+       </div>
+   </div>
+</body>
+</html>

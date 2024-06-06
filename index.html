@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrajería Aranguren - Productos</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Barra de menú -->
+    <!-- Copia el contenido de cuerpo_H.html aquí -->
+    <header>
+        <nav class="nav">
+            <ul class="nav_ul">
+                <li class="nav__li"><i class="fas fa-home"></i><a href="#">Inicio</a></li>
+                <li class="nav__li"><i class="fa-solid fa-user"></i><a href="#">Sobre Nosotros</a></li>
+                <li class="nav__li"><i class="fa-solid fa-key"></i><a href="#">Productos</a></li>
+                <li class="nav__li"><i class="fa-solid fa-circle-question"></i><a href="#">Ayuda</a></li>
+            </ul>
+            <ul class="nav__responsive-ul">
+                <div class="nav__responsive-button-container">
+                    <div class="nav__responsive-button fas fa-bars"></div>
+                </div>
+                <div class="nav__li-container"></div>
+                    <li class="nav__responsive-li"><i class="fas fa-home"></i><a href="#">Inicio</a></li>
+                    <li class="nav__responsive-li"><i class="fa-solid fa-user"></i><a href="#">Sobre Nosotros</a></li>
+                    <li class="nav__responsive-li"><i class="fa-solid fa-key"></i><a href="#">Productos</a></li>
+                    <li class="nav__responsive-li"><i class="fa-solid fa-circle-question"></i><a href="#">Ayuda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h1>Bienvenido a Cerrajería Aranguren</h1>
+        <p>Aquí puedes ver nuestros productos y realizar pedidos.</p>
+
+        <!-- Listado de productos -->
+        <div class="producto">
+            <h3>Producto 1</h3>
+            <p>Descripción del producto 1.</p>
+            <p>Precio: $XX.XX</p>
+            <!-- Puedes agregar más productos de manera similar -->
+        </div>
+
+        <!-- Botón para mostrar el formulario de mensaje -->
+        <button id="btn_mostrar_formulario" onclick="mostrarFormulario()">Enviar Mensaje</button>
+
+        <!-- Formulario de mensaje -->
+        <form id="mensaje_formulario" action="backend_EnviarMensaje.php" method="POST">
+            <h2>Enviar Mensaje</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required><br><br>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
