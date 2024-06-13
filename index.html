@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerrajería Aranguren - Productos</title>
+    <title>Cerrajería Aranguren</title>
     <link rel="stylesheet" href="styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,39 +14,114 @@
 </head>
 <body>
     <!-- Barra de menú -->
-    <!-- Copia el contenido de cuerpo_H.html aquí -->
     <header>
         <nav class="nav">
             <ul class="nav_ul">
-                <li class="nav__li"><i class="fas fa-home"></i><a href="#">Inicio</a></li>
-                <li class="nav__li"><i class="fa-solid fa-user"></i><a href="#">Sobre Nosotros</a></li>
-                <li class="nav__li"><i class="fa-solid fa-key"></i><a href="#">Productos</a></li>
-                <li class="nav__li"><i class="fa-solid fa-circle-question"></i><a href="#">Ayuda</a></li>
+                <li class="nav__li"><i class="fas fa-home"></i><a href="index.html">Inicio</a></li>
+                <li class="nav__li"><i class="fa-solid fa-user"></i><a href="sobre_Nosotros.html">Sobre Nosotros</a></li>
+                <li class="nav__li"><i class="fa-solid fa-key"></i><a href="productos.html">Productos</a></li>
+                <li class="nav__li"><i class="fa-solid fa-circle-question"></i><a href="ayuda.html">Ayuda</a></li>
+                <li class="nav__li nav__li--right"><i class="fa-solid fa-circle-user" id="iniciar"></i><a href="Login_P.html">Iniciar Sesión</a></li>
             </ul>
             <ul class="nav__responsive-ul">
                 <div class="nav__responsive-button-container">
                     <div class="nav__responsive-button fas fa-bars"></div>
                 </div>
                 <div class="nav__li-container"></div>
-                    <li class="nav__responsive-li"><i class="fas fa-home"></i><a href="#">Inicio</a></li>
-                    <li class="nav__responsive-li"><i class="fa-solid fa-user"></i><a href="#">Sobre Nosotros</a></li>
-                    <li class="nav__responsive-li"><i class="fa-solid fa-key"></i><a href="#">Productos</a></li>
-                    <li class="nav__responsive-li"><i class="fa-solid fa-circle-question"></i><a href="#">Ayuda</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-home"></i><a href="index.html">Inicio</a></li>
+                    <li class="nav__responsive-li"><i class="fa-solid fa-user"></i><a href="sobre_Nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav__responsive-li"><i class="fa-solid fa-key"></i><a href="productos.html">Productos</a></li>
+                    <li class="nav__responsive-li"><i class="fa-solid fa-circle-question"></i><a href="ayuda.html">Ayuda</a></li>
+                    <li class="nav__responsive-li"><i class="fa-solid fa-circle-user"></i><a href="Login_P.html">Iniciar Sesión</a></li>
+                    
+
             </ul>
         </nav>
     </header>
 
     <!-- Contenido de la página -->
-    <div class="container">
-        <h1>Bienvenido a Cerrajería Aranguren</h1>
-        <p>Aquí puedes ver nuestros productos y realizar pedidos.</p>
+ <!-- Carousel Start -->
+ <div class="carousel">
+    <div class="container-fluid">
+        <div class="owl-carousel">
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="cerrajeria1.JPG" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>Cerrajería Aranguren <span>Sinonimo de calidad</span></h1>
+                    <p>
+                        somos una cerrajeria con 3 generaciones de experiencia
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn custom-btn" href="index.html">Ver catalogo</a>
+                        <a class="btn custom-btn" href="Login_P.html">Enviar mensaje</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="img/carousel-2.jpg" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>World’s <span>Best</span> Chef</h1>
+                    <p>
+                        Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn custom-btn" href="index.html">Ver catalogo</a>
+                        <a class="btn custom-btn" href="Login_P.html">Enviar mensaje</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="img/carousel-3.jpg" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>Fastest Order <span>Delivery</span></h1>
+                    <p>
+                        Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn custom-btn" href="index.html">Ver catalogo</a>
+                        <a class="btn custom-btn" href="Login_P.html">Enviar mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
 
         <!-- Listado de productos -->
-        <div class="producto">
+        <div class="producto1">
             <h3>Producto 1</h3>
             <p>Descripción del producto 1.</p>
             <p>Precio: $XX.XX</p>
-            <!-- Puedes agregar más productos de manera similar -->
+        </div>
+        <div class="producto2">
+            <h3>Producto 2</h3>
+            <p>Descripción del producto 1.</p>
+            <p>Precio: $XX.XX</p>
+        </div>
+
+        <div class="producto3">
+            <h3>Producto 3</h3>
+            <p>Descripción del producto 1.</p>
+            <p>Precio: $XX.XX</p>
+        </div>
+
+        <div class="producto4">
+            <h3>Producto 4</h3>
+            <p>Descripción del producto 1.</p>
+            <p>Precio: $XX.XX</p>
+        </div>
+
+        <div class="producto5">
+            <h3>Producto 5</h3>
+            <p>Descripción del producto 1.</p>
+            <p>Precio: $XX.XX</p>
         </div>
 
         <!-- Botón para mostrar el formulario de mensaje -->
@@ -64,7 +139,13 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
+    
 
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 WebWizards</p>
+        <p><a href="historial.html">Historial de la Empresa</a></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
