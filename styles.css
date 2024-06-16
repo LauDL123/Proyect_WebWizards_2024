@@ -130,7 +130,7 @@
     position: center;
     left: 0;
     bottom: 0;
-    width: 99.5%;sss
+    width: 99.5%;
 }
 .footer p {
     margin: 5px 0;
@@ -153,10 +153,12 @@ h2 {
 }
 
 .slider-frame {
-	width: 1280px;
+    
+	width: 1000px;
     height: auto;
-	margin:50px auto 0;
+	margin:20px auto 0;
 	overflow: hidden;
+
 }
 
 .slider-frame ul {
