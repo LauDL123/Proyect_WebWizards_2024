@@ -76,7 +76,7 @@ Contact:
 
 Lautaro de León: 
 
-Gmail: lautadeleon222@gmail 
+Gmail: lautadeleon222@gmail.com 
 
 GitHub: https://github.com/LauDL123 
 
@@ -196,7 +196,7 @@ Contacto
 
 Lautaro de León:  
 
-Gmail: lautadeleon222@gmail 
+Gmail: lautadeleon222@gmail.com
 
 Github: https://github.com/LauDL123 
 
