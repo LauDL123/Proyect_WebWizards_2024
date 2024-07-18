@@ -1,3 +1,31 @@
+/* Estilo del botón flotante */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4299e1; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+.floating-button:hover {
+    background-color: #3072b3; /* Fondo azul más oscuro al hacer hover */
+}
+
+
+
+
 body {
     font-family: 'Sen', sans-serif; /* Fuente personalizada */
     margin: 0;
@@ -54,6 +82,20 @@ header {
     margin-left: auto; /* Empuja el elemento a la derecha */
 }
 
+.nav__li b
+.nav__li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color de texto */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+.nav__li a:hover {
+    background-color: #4299e1; /* Fondo azul al hacer hover */
+    color: #ffffff; /* Texto blanco al hacer hover */
+}
+
 .slider-frame {
     max-width: 1200px;
     margin: 2rem auto; /* Centrado y margen superior e inferior */
@@ -93,6 +135,45 @@ header {
 .btn-contacto:hover {
     background-color: #3072b3; /* Fondo azul más oscuro al hacer hover */
 }
+.user-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.user-menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-menu a:hover {
+    background-color: #f0f0f0;
+}
+
 
 #btn_mostrar_formulario {
     background-color: #4299e1; /* Fondo azul */

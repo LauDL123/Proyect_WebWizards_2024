@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Establecer una cookie de sesión
         setcookie("username", $username, time() + (86400 * 30), "/"); // 86400 = 1 día
 
-        // Iniciar sesión exitosamente y redirigir a index.html
-        header("Location: index.html");
+        // Iniciar sesión exitosamente y redirigir a index.php
+        header("Location: index.php");
         exit();
     } else {
         // Fallo en el inicio de sesión

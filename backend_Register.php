@@ -17,7 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ss", $username, $hashed_password);
 
     if ($stmt->execute()) {
-        echo "Registro exitoso. Ahora puede iniciar sesión.";
+       
+         // Iniciar sesión exitosamente y redirigir a el login
+         header("Location: Login_P.php?registro=exitoso");
+         exit();
+        
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -26,4 +30,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $conn->close();
 ?>
-
