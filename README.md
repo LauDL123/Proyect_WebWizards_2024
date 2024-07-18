@@ -196,7 +196,7 @@ Contacto
 
 Lautaro de León:  
 
-Gmail: lautadeleon222@gmail 
+Gmail: lautadeleon222@gmail.com
 
 Github: https://github.com/LauDL123 
 
