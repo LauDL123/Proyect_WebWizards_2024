@@ -44,9 +44,9 @@ npm install
 
 Usage: 
 
-The tool is designed for users to register, purchase, and/or send messages to the administrator to finalize purchases or services. 
+The tool is designed for users to register, request, and/or send messages to the administrator to finalize services. 
 
-From the administrator's side, inventory and services provided can be managed, as well as the inbox. 
+From the administrator's side, services provided can be managed, as well as the inbox. 
 
  
 
@@ -104,13 +104,13 @@ LinkedIn: www.linkedin.com/in/feliciano-may-98b881318
 
 
 
-Juan Aranguren: 
+Juan Diego Aranguren: 
 
 Gmail: juandiegoarangurenmartinez@gmail.com 
 
 GitHub: https://github.com/Juandiex 
 
- 
+LinkedIn: www.linkedin.com/in/juan-diego-aranguren-711696320 
 
  
 
@@ -160,9 +160,9 @@ npm install
 
 Uso 
 
-La herramienta está pensada para que usuarios se registren, compren y/o envíen mensajes al administrador para concretar compras o servicios.  
+La herramienta está pensada para que usuarios se registren, soliciten y/o envíen mensajes al administrador para concretar compras o servicios.  
 
-Del lado del administrador se podrá gestionar inventario y servicios que se brindan. Obviamente también administrar la bandeja de entrada. 
+Del lado del administrador se podrá gestionar los servicios que se brindan. Obviamente también administrar la bandeja de entrada. 
 
  
 
@@ -224,8 +224,10 @@ Linkedin: www.linkedin.com/in/feliciano-may-98b881318
 
  
 
-Juan Aranguren:  
+Juan Diego Aranguren:  
 
 Gmail: juandiegoarangurenmartinez@gmail.com 
 
-Github: https://github.com/Juandiex 
+Github: https://github.com/Juandiex
+
+LinkedIn: www.linkedin.com/in/juan-diego-aranguren-711696320
