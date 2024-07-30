@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #dbdbdb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,10 +36,14 @@ h2 {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color:#fff;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #006eff;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -50,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #004db3;
 }
 
 p {
@@ -58,7 +62,7 @@ p {
 }
 
 p a {
-    color: #4CAF50;
+    color: #006eff;
     text-decoration: none;
 }
 
