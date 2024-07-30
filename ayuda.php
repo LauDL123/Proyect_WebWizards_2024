@@ -46,5 +46,6 @@
 </header>
        
 <h1>Ayuda</h1>
+<p>se alejan cositas</p>
 </body>
 </html>
