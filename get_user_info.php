@@ -1,26 +1,34 @@
 <?php
 session_start();
-require 'backend_BD.php';
 
-$response = [
-    'loggedIn' => false,
-    'userName' => '',
-    'userPhoto' => ''
-];
+// Configurar el tipo de contenido como JSON
+header('Content-Type: application/json');
 
-if (isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-    $stmt = $conn->prepare("SELECT username, foto FROM usuarios WHERE id = ?");
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $stmt->bind_result($username, $foto);
-    if ($stmt->fetch()) {
-        $response['loggedIn'] = true;
-        $response['userName'] = $username;
-        $response['userPhoto'] = $foto;
+try {
+    // Verificar si el usuario está logueado
+    if (isset($_SESSION['username'])) {
+        $response = array(
+            "loggedIn" => true,
+            "userPhoto" => "uploads/" . $_SESSION['foto'],
+            "userName" => $_SESSION['username']
+        );
+    } else {
+        $response = array(
+            "loggedIn" => false,
+            "userPhoto" => "",
+            "userName" => ""
+        );
     }
-    $stmt->close();
-}
 
-echo json_encode($response);
+    // Devolver la respuesta JSON
+    echo json_encode($response);
+} catch (Exception $e) {
+    // En caso de error, devolver un JSON con un mensaje de error
+    echo json_encode(array(
+        "loggedIn" => false,
+        "userPhoto" => "",
+        "userName" => "",
+        "error" => $e->getMessage()
+    ));
+}
 ?>

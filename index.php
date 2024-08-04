@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,6 +16,7 @@
 
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css de practica.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -24,24 +29,9 @@
             <li class="nav__li"><i class="fa-solid fa-key"></i><a href="productos.php">Servcios</a></li>
             <li class="nav__li"><i class="fa-solid fa-circle-question"></i><a href="ayuda.php">Ayuda</a></li>
             <li class="nav__li nav__li--right">
-                <?php
-                session_start();
-                if (isset($_SESSION['username'])) {
-                    echo '
-                    <div class="user-info" onclick="toggleUserMenu()">
-                        <img src="uploads/' . $_SESSION['foto'] . '" alt="User Photo">
-                        <span>' . $_SESSION['username'] . '</span>
-                    </div>
-                    <div class="user-menu" id="userMenu">
-                        <a href="personalizar.php">Personalizar</a>
-                        <a href="logout.php">Cerrar Sesión</a>
-                    </div>';
-                } else {
-                    echo '<i class="fa-solid fa-circle-user" id="iniciar"></i><a href="Login_P.php">Iniciar Sesión</a>';
-                }
-                ?>
-                <li class="nav__li"><i class="fa-solid fa-paper-plane"></i><a href="mensaje.php">Escribanos</a></li>
+            <div id="login-container"></div>
             </li>
+            <li class="nav__li"><i class="fa-solid fa-paper-plane"></i><a href="mensaje.php">Escribanos</a></li>
         </ul>
     </nav>
 </header>
@@ -123,6 +113,6 @@
         <p>&copy; 2024 powered by WebWizards</p>
         <p><a href="historial.php">Historial de la Empresa</a></p>
     </footer>
-    <script src="script.js"></script>
+    
 </body>
 </html>

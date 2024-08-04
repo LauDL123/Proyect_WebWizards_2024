@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const loginContainer = document.getElementById("login-container");
 
-    // Función para verificar si el usuario está logueado
     function checkUserLogin() {
         fetch('get_user_info.php')
-            .then(response => response.json())
+            .then(response => response.text())  // Lee la respuesta como texto primero
+            .then(text => {
+                return JSON.parse(text);  // Analiza el texto como JSON
+            })
             .then(data => {
                 if (data.loggedIn) {
                     loginContainer.innerHTML = `
@@ -13,32 +15,26 @@ document.addEventListener("DOMContentLoaded", function() {
                             <span>${data.userName}</span>
                         </div>
                         <div class="user-menu" id="user-menu">
-                            <a href="personalizar.html">Personalizar</a>
+                            <a href="personalizar.php">Personalizar</a>
                             <a href="logout.php">Cerrar Sesión</a>
                         </div>
                     `;
                 } else {
                     loginContainer.innerHTML = `
-                        <i class="fa-solid fa-circle-user" id="iniciar"></i><a href="login.html">Iniciar Sesión</a>
+                        <i class="fa-solid fa-circle-user" id="iniciar"></i><a href="Login_P.php">Iniciar Sesión</a>
                     `;
                 }
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+                loginContainer.innerHTML = `<p>Error: ${error.message}</p>`;
             });
     }
 
-    // Función para mostrar/ocultar el menú del usuario
     window.toggleUserMenu = function() {
         const userMenu = document.getElementById("user-menu");
         userMenu.style.display = userMenu.style.display === "block" ? "none" : "block";
     }
 
-
-    // Llama a la función para verificar si el usuario está logueado
     checkUserLogin();
 });
-
-
-
-function mostrarFormulario() {
-    var formulario = document.getElementById("mensaje_formulario");
-    formulario.style.display = "block";
-}
