@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css_Login.css" />
-    <link rel="stylesheet" href="estilo22.css">
-    <link rel="stylesheet" href="css de practica.css">
+    <link rel="stylesheet" href="../css/estilo22.css">
 </head>
 <body>
 
