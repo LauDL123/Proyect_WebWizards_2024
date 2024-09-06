@@ -238,40 +238,17 @@ header {
     color: #3072b3; /* Texto azul más oscuro al hacer hover */
 }
 /* Estilos para el carrusel */
-.slider-frame {
-    max-width: 100%; /* Ajusta el ancho máximo del contenedor */
-    margin: 20px auto; /* Centra el carrusel */
-    overflow: hidden; /* Oculta el contenido que se desborda */
+.slider {
+    overflow: hidden;
 }
 
-.slider-frame ul {
+.slides {
+    width: 100%;
     display: flex;
-    padding: 0;
-    width: 100%; /* Ocupa el ancho completo del contenedor */
-    animation: slide 20s infinite alternate ease-in-out;
+    flex: 0 0 auto;
 }
 
-.slider-frame li {
-    min-width: 100%; /* Cada imagen ocupa el ancho completo del contenedor */
-    list-style: none;
-}
-
-.slider-frame img {
-    width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
-    max-height: 500px; /* Limita la altura máxima a 70px */
-    height: auto; /* Permite que la altura se ajuste proporcionalmente */
-    height: auto; /* Permite que la altura se ajuste automáticamente */
-    object-fit: cover; /* Ajusta la imagen manteniendo la relación de aspecto y cubriendo el área */
-}
-
-@keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    95% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
+.slides img {
+    width: 100%;
+    height: auto;
 }
