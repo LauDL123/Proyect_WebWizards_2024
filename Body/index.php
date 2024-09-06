@@ -17,6 +17,7 @@ session_start();
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css de practica.css">
     <script src="script.js" defer></script>
+    <script src="../Scripts/slider.js"></script>
 </head>
 <body>
 
@@ -36,7 +37,7 @@ session_start();
     </nav>
 </header>
     <!-- Carousel Start -->
-    <div class="slider-frame">
+    <div class="slider">
         <ul>
             <li><img src="cerrajeria1.JPG" alt=""></li>
             <li><img src="cerradura.jpg" alt=""></li>
