@@ -1,0 +1,64 @@
+/* Estilos para el contenedor del formulario */
+.container {
+    max-width: 800px;
+    margin: 2rem auto; /* Centrar el contenedor horizontalmente */
+    padding: 2rem;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para el título */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    color: #333; /* Color del texto */
+    font-family: 'Sen', sans-serif; /* Fuente de Google Fonts */
+}
+
+/* Estilos para los grupos de entrada */
+.input-group {
+    margin-bottom: 1rem; /* Espacio debajo de cada grupo de entrada */
+}
+
+/* Estilos para las etiquetas */
+.input-group label {
+    display: block; /* Mostrar etiqueta como bloque para ocupar toda la línea */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 0.5rem; /* Espacio debajo de la etiqueta */
+    color: #555; /* Color del texto */
+}
+
+/* Estilos para los campos de entrada y textarea */
+.input-group input,
+.input-group textarea {
+    width: 100%; /* Ocupa el 100% del contenedor */
+    padding: 0.75rem; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+/* Estilos para el textarea */
+.input-group textarea {
+    height: 150px; /* Altura fija */
+    resize: vertical; /* Permitir el cambio de tamaño verticalmente */
+}
+
+/* Estilos para el botón de envío */
+.input-group button {
+    background-color: #4299e1; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 0.75rem 1.5rem; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para el botón de envío en estado hover */
+.input-group button:hover {
+    background-color: #2b6cb0; /* Color de fondo más oscuro al pasar el cursor */
+}

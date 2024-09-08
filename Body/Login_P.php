@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css_Login.css" />
-    <link rel="stylesheet" href="../css/estilo22.css">
+
+    <link rel="stylesheet" href="../css/css_Login.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
                echo "<script>alert('Registro exitoso');</script>";
            }
            ?>
-           <form action="backend_Login.php" method="POST">
+           <form action="../Backend/backend_Login.php" method="POST">
               <div class="input-group">
                 <label for="login_username">Usuario 🔓</label>
                 <input type="text" id="login_username" name="username" required>
@@ -32,6 +32,7 @@
               <button type="submit">Ingresar</button>
            </form>
            <p>¿No estás registrado? <a href="Register.html">Hazlo aquí</a></p>
+           <p>¿Quieres volver al incio? <a href="index.php">Vuelve aquí</a></p>
        </div>
    </div>
 </body>

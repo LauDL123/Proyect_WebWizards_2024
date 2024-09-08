@@ -34,12 +34,26 @@ body {
 }
 
 header {
+    display: flex;
+    position: relative; /* Para colocar el logo en una posición específica */
     background-color: #ffffff; /* Fondo blanco */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     position: sticky;
     top: 0;
     z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
 }
+
+/* Estilo del logo */
+.header__logo {
+     /* No permite que el logo crezca ni se encoja */
+    margin-right: 2rem; /* Espacio entre el logo y el menú de navegación */
+}
+
+.header__logo img {
+    max-height: 100px; /* Ajusta la altura máxima del logo a 10px */
+     /* Mantiene las proporciones del logo */
+}
+
 
 .nav {
     display: flex;
@@ -96,42 +110,41 @@ header {
     color: #ffffff; /* Texto blanco al hacer hover */
 }
 
-.slider-frame {
-    max-width: 1200px;
-    margin: 2rem auto; /* Centrado y margen superior e inferior */
-    overflow: hidden; /* Oculta el desbordamiento */
-}
 
-.slider-frame ul {
+/* Estilos generales del producto */
+.producto {
     display: flex;
-    animation: slide 10s infinite; /* Animación infinita */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.slider-frame li {
-    min-width: 100%; /* Cada imagen ocupa el 100% del contenedor */
-}
-
-.producto1, .producto2, .producto3, .producto4, .producto5 {
-    background-color: #f0f0f0; /* Fondo gris claro */
-    padding: 1rem;
+    align-items: center;
     margin: 1rem 0;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f0f0f0; /* Fondo gris claro */
+    overflow: hidden;
 }
 
-.btn-contacto {
-    background-color: #4299e1; /* Fondo azul */
-    color: #ffffff; /* Texto blanco */
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+/* Disposición por defecto: imagen a la izquierda y texto a la derecha */
+.producto--default {
+    flex-direction: row;
 }
 
+/* Disposición alternada: texto a la izquierda y imagen a la derecha */
+.producto--reverse {
+    flex-direction: row-reverse;
+}
+
+.producto-img {
+    width: 30%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    object-fit: cover;
+}
+
+.producto-text {
+    width: 30%; /* Ajusta el tamaño del contenedor de texto */
+    padding: 1rem;
+}
+
+
+/*estilos generales*/
 .btn-contacto:hover {
     background-color: #3072b3; /* Fondo azul más oscuro al hacer hover */
 }
@@ -237,18 +250,71 @@ header {
 .footer a:hover {
     color: #3072b3; /* Texto azul más oscuro al hacer hover */
 }
-/* Estilos para el carrusel */
-.slider {
-    overflow: hidden;
-}
 
-.slides {
-    width: 100%;
+/*estilos para el perfil*/
+.user-info {
     display: flex;
-    flex: 0 0 auto;
+    align-items: center;
+    cursor: pointer;
 }
 
-.slides img {
-    width: 100%;
-    height: auto;
+.user-info span {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-menu {
+    display: none; /* Ocultar por defecto */
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    right: 0;
+    top: 50px;
+    z-index: 1;
+}
+
+.user-menu a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.user-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostrar el menú cuando se haga clic */
+.user-menu.show {
+    display: block;
+}
+
+/*carrusel*/
+.slider-frame {
+    width: 100%; /* Ocupar todo el ancho de la pantalla */
+    margin: 0 auto; /* Centrado */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    position: relative;
+    height: auto; /* Ajuste automático según el contenido */
+}
+
+.slider-frame ul {
+    display: flex;
+    transition: transform 0.5s ease;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slider-frame li {
+    min-width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+    box-sizing: border-box;
+}
+
+.slider-frame img {
+    width: 100vw; /* Ocupar todo el ancho del viewport */
+    height: 400px; 
+    object-fit: cover; /* Ajustar sin distorsionar */
 }

@@ -3,7 +3,7 @@ session_start();
 require 'backend_DB.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: Login_P.html");
+    header("Location: ../Body/Login_P.php");
     exit();
 }
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($stmt->execute()) {
         $_SESSION['username'] = $nuevo_nombre;
         $_SESSION['foto'] = $nuevo_foto["name"];
-        header("Location: index.php");
+        header("Location: ../Body/index.php");
         exit();
     } else {
         $error = "Error al actualizar perfil";
@@ -41,45 +41,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css de practica.css">
+    <script src="../Scripts/controlMenu.js"></script>
+    <link rel="icon" href="../img/key-chain.ico" type="image/x-icon">
 </head>
 <body>
-     <!-- Barra de menú -->
+    <!-- Barra de menú -->
 <header>
-    <nav class="nav">
-        <ul class="nav_ul">
-            <li class="nav__li"><i class="fas fa-home"></i><a href="index.php">Inicio</a></li>
-            <li class="nav__li"><i class="fa-solid fa-user"></i><a href="sobre_Nosotros.php">Sobre Nosotros</a></li>
-            <li class="nav__li"><i class="fa-solid fa-key"></i><a href="productos.php">Servcios</a></li>
-            <li class="nav__li"><i class="fa-solid fa-circle-question"></i><a href="ayuda.php">Ayuda</a></li>
-            <li class="nav__li nav__li--right">
-                <?php
-                session_start();
-                if (isset($_SESSION['username'])) {
-                    echo '
-                    <div class="user-info" onclick="toggleUserMenu()">
-                        <img src="uploads/' . $_SESSION['foto'] . '" alt="User Photo">
-                        <span>' . $_SESSION['username'] . '</span>
-                    </div>
-                    <div class="user-menu" id="userMenu">
-                        <a href="personalizar.php">Personalizar</a>
-                        <a href="logout.php">Cerrar Sesión</a>
-                    </div>';
-                } else {
-                    echo '<i class="fa-solid fa-circle-user" id="iniciar"></i><a href="Login_P.php">Iniciar Sesión</a>';
-                }
-                ?>
-                <li class="nav__li"><i class="fa-solid fa-paper-plane"></i><a href="mensaje.php">Escribanos</a></li>
-            </li>
-        </ul>
-    </nav>
+    <?php include "../Backend/reusables/navbar.php"?>
 </header>
 
     <h2>Personalizar Perfil</h2>
     <?php if (isset($error)): ?>
         <p><?php echo $error; ?></p>
     <?php endif; ?>
-    <form action="personalizar_perfil.php" method="POST" enctype="multipart/form-data">
+    <form action="../Body/personalizar.php" method="POST" enctype="multipart/form-data">
         <label for="nuevo_nombre">Nuevo Nombre:</label>
         <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo $username; ?>" required><br><br>
         <label for="nuevo_foto">Nueva Foto:</label>
