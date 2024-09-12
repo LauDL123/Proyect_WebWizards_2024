@@ -257,6 +257,7 @@ header {
 }
 
 .slider-frame img {
+<<<<<<< Updated upstream
     width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
     max-height: 500px; /* Limita la altura máxima a 70px */
     height: auto; /* Permite que la altura se ajuste proporcionalmente */
@@ -274,4 +275,48 @@ header {
     75% { transform: translateX(-300%); }
     95% { transform: translateX(-300%); }
     100% { transform: translateX(0); }
+=======
+    width: 100vw; /* Ocupar todo el ancho del viewport */
+    height: 400px; 
+    object-fit: cover; /* Ajustar sin distorsionar */
+}
+
+
+
+
+/*estilos historial.php*/
+.nosotros{
+    display: table;
+    border-spacing: 1cap;
+
+}
+
+.nosotros div{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: table-cell;
+    padding: 8px;
+    background-color: #b0b6b3;
+    border-radius: 20px;
+}
+
+/* estilos para Sobre_¨_Nosotros.php*/
+.pe{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: table-cell;
+    padding: 8px;
+    background-color: #586e09;
+    border-radius: 20px;
+   font-size: 46px;
+   color: peru;
+}
+
+.sobre{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: table-cell;
+    padding: 8px;
+    background-color: #201dd6;
+    border-radius: 20px;
+    font-size: 50px;
+    color: red;
+>>>>>>> Stashed changes
 }

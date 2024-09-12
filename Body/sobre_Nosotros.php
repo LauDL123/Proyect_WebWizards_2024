@@ -43,16 +43,19 @@
     </nav>
 </header>
 
-    
-    <h1>Sobre nosotros</h1>
+    <div class="sobre"><strong>Sobre nosotros</strong> 💣☢️💥<br></div>
+       <div class="pe">
     <p>Tres generaciones y mas de 50 años de trayectoria en el medio al servicio de nuestra gente, brindando siempre la excelencia por su seguridad.  
         Miguel Angel y Miguel Alejandro Aranguren.  
         Estamos preparados para trabajar con cerraduras y llaves de última generación; cerraduras digitales para cajas fuertes y llaves codificadas para vehículos.
-        Trabajamos con:  
-        -Copias de llaves  
-        -Cambios de combinaciones  
-        -Aperturas   
-        -Cerrajería del automóvil  
-        -Cofres y cajas fuertes para cada necesidad </p>
+        Trabajamos con: <br>
+        -Copias de llaves 🔑  <br>
+        -Cambios de combinaciones 🔓   <br>
+        -Aperturas  🚪  <br>
+        -Cerrajería del automóvil 🚗  <br>
+        -Cofres y cajas fuertes para cada necesidad 🧰<br>
+    </p>
+        </div>
+    
 </body>
 </html>

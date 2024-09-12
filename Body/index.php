@@ -21,7 +21,12 @@ session_start();
 </head>
 <body>
 
+<<<<<<< Updated upstream
    <!-- Barra de menú -->
+=======
+
+<!-- Barra de menú -->
+>>>>>>> Stashed changes
 <header>
     <nav class="nav">
         <ul class="nav_ul">
@@ -48,8 +53,34 @@ session_start();
     <!-- Carousel End -->
 
     <!-- Listado de productos -->
+<<<<<<< Updated upstream
     <div class="container mx-auto p-4">
         <h2 class="text-2xl font-bold mt-8">Nuestros Servcios</h2>
+=======
+  <!-- Listado de productos -->
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mt-8">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+        <div class="producto producto--default">
+            <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
+            <div class="producto-text">
+                <h3 class="text-lg font-bold">Producto 1</h3>
+                <p class="text-gray-600">Descripción del producto 1.</p>
+            </div>
+
+        </div>
+      
+        <div class="producto producto--reverse">
+        <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
+            <div class="producto-text">
+           
+                <h3 class="text-lg font-bold">Producto 2</h3>
+                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
+            </div>
+            
+        </div>
+
+>>>>>>> Stashed changes
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
             <div class="bg-light-gray shadow rounded-lg overflow-hidden">
                 <img src="https://placehold.co/300x200" alt="Product 1" class="w-full h-48 object-cover" />
@@ -59,6 +90,7 @@ session_start();
                     <button class="btn-contacto">Contacto</button>
                 </div>
             </div>
+<<<<<<< Updated upstream
             <div class="bg-light-gray shadow rounded-lg overflow-hidden">
                 <img src="https://placehold.co/300x200" alt="Product 2" class="w-full h-48 object-cover" />
                 <div class="p-4">
@@ -83,6 +115,19 @@ session_start();
                     <button class="btn-contacto">Contacto</button>
                 </div>
             </div>
+=======
+        <!-- Añadir más productos según sea necesario -->
+    </div>
+</div>
+
+ <div class="producto producto--reverse">
+ <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
+            <div class="producto-text">
+                <h3 class="text-lg font-bold">Producto 2</h3>
+                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
+            </div>
+            
+>>>>>>> Stashed changes
         </div>
     </div>
 
