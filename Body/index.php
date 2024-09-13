@@ -52,16 +52,16 @@ session_start();
         <div class="producto producto--default">
             <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Producto 1</h3>
-                <p class="text-gray-600">Descripción del producto 1.</p>
+                <h3 class="text-lg font-bold">Servicio 1</h3>
+                <p class="text-gray-600">Edita estas cosas tambien feli</p>
             </div>
 
         </div>
         <div class="producto producto--reverse">
              <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Producto 2</h3>
-                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
+                <h3 class="text-lg font-bold">PServicio 2</h3>
+                <p class="text-gray-600">esto tenes que editar tambien</p>
             </div>
         </div>
 
@@ -69,8 +69,8 @@ session_start();
         <div class="producto producto--default">
             <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Producto 1</h3>
-                <p class="text-gray-600">Descripción del producto 1.</p>
+                <h3 class="text-lg font-bold">Servicio 3</h3>
+                <p class="text-gray-600">Edita esto tambien feli</p>
             </div>
         <!-- Añadir más productos según sea necesario -->
     </div>
@@ -79,8 +79,8 @@ session_start();
  <div class="producto producto--reverse">
     <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Producto 2</h3>
-                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
+                <h3 class="text-lg font-bold">Servicio 4</h3>
+                <p class="text-gray-600">Feli edita esto con un servicio real</p>
             </div>
         </div>
 
