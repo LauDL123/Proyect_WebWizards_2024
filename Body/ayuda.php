@@ -14,13 +14,33 @@
 
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<div>
    <!-- Barra de menú -->
 <header>
     <?php include "../Backend/reusables/navbar.php"?>
 </header>
        
 <h1>Ayuda</h1>
-<p>se alejan cositas</p>
+
+<h2>En esta seccion se explican paso por paso, las funcionalidades para ayudarlo a usted</h2>
+<div class="ayuda">
+<div>
+<h3>Iniciar sesion o Registrarse</h3>
+<p>Para poder enviar mensajes atraves del boton de chat "💬" o en la seccion de "escribanos", para ello tiene que crearse una cuenta en el apartado "Iniciar Sesiòn", una vez acceda a dicho apartado, se le pediran una serie de datos como podrian ser su nombre, apellido, gmail entre otros. Una vez creada la cuenta podra aprovechar al maximo la experiencia que ofrece nuestra pagina! 🚀​</p>
+</div>
+<div>
+<h3>Chat "💬"</h3>
+<p>En esta seccion, se podra mensajear de manera directa con el dueño del negocio acerca sobre cualquier duda o consulta que se le presente.</p>
+</div>
+<div>
+<h3>"Escribanos"</h3>
+<p>El apartado "Escribanos" a difrencia del chat, es que este mismo sirve para realizar un pedido estructurado y ya previsto directamente con el dueño del negocio, y tener una comunicacion mas inmediata del mismo.</p>
+</div>
+
+<div>
+<h3>Servicios</h3>
+<p></p>
+</div>
+</div>
 </body>
 </html>

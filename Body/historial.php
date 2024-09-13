@@ -22,29 +22,39 @@
 
     <h1>Team WebWizards:</h1>
 
+
+<div class="nosotros">
+
+    <div>
     <h3>Lautaro de León</h3>
 
     <p>Gmail: <a href="lautadeleon222@gmail.com">lautadeleon222@gmail.com</a></p>
     <p>Github: <a href="https://github.com/LauDL123">https://github.com/LauDL123</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/lautaro-de-león">www.linkedin.com/in/lautaro-de-león</a></p>
+     </div>
 
+    <div>
     <h3>Juan Aranguren</h3>
 
     <p>Gmail: <a href="juandiegoarangurenmartinez@gmail.com">juandiegoarangurenmartinez@gmail.com</a></p>
     <p>Github: <a href="https://github.com/Juandiex">https://github.com/Juandiex</a></p>
     <p>LinkedIn: <a href="">tiene que crearlo</a></p>
-   
+   </div>
+   <div>
     <h3>Tabaré Quintana:</h3>
 
     <p>Gmail: <a href="tabaquintana@gmail.com">tabaquintana@gmail.com</a></p>
     <p>Github: <a href="https://github.com/TabareQuintana">https://github.com/TabareQuintana</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/nitquintana">www.linkedin.com/in/nitquintana</a></p>
-
+    </div>
+    
+    <div>
     <h3>Feliciano May</h3>
 
     <p>Gmail: <a href="felicianomay735@gmail.com">felicianomay735@gmail.com</a></p>
     <p>Github: <a href="https://github.com/Spongiboby">https://github.com/Spongiboby</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/feliciano-may-98b881318"> www.linkedin.com/in/feliciano-may-98b881318</a></p>
-
+    </div>
+</div>
 </body>
 </html>

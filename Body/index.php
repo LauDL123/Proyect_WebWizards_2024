@@ -58,11 +58,11 @@ session_start();
 
         </div>
         <div class="producto producto--reverse">
+             <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
             <div class="producto-text">
                 <h3 class="text-lg font-bold">Producto 2</h3>
                 <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
             </div>
-            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
@@ -77,11 +77,11 @@ session_start();
 </div>
 
  <div class="producto producto--reverse">
+    <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
             <div class="producto-text">
                 <h3 class="text-lg font-bold">Producto 2</h3>
                 <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
             </div>
-            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
         </div>
 
     <!-- Botón flotante -->

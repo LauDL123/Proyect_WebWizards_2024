@@ -318,3 +318,36 @@ header {
     height: 400px; 
     object-fit: cover; /* Ajustar sin distorsionar */
 }
+
+
+/*Estilos sobreNosotros.php*/
+
+.nosotros{
+    box-shadow: 5px 5px 5px 0.1;
+    
+    display: table;
+    border-spacing: 15px;
+}
+
+.nosotros div{
+    padding: 5px;
+    display: table-cell;
+    background: #e0e0e0;
+    border-radius: 20px;
+}
+
+
+/*Estilo Ayuda.php*/
+.ayuda{
+    box-shadow: 5px 5px 5px 0.1;
+    
+    display: table;
+    border-spacing: 15px;
+}
+
+.ayuda div{
+    padding: 5px;
+    display: table-cell;
+    background: #e0e0e0;
+    border-radius: 20px;
+}
