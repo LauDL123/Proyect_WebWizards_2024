@@ -84,26 +84,6 @@ LinkedIn: www.linkedin.com/in/lautaro-de-león
 
  
 
-Tabaré Quintana: 
-
-Gmail: tabaquintana@gmail.com 
-
-GitHub: https://github.com/TabareQuintana 
-
-LinkedIn: www.linkedin.com/in/nitquintana 
-
-
-
-Feliciano May: 
-
-Gmail: felicianomay735@gmail.com 
-
-GitHub: https://github.com/Spongiboby 
-
-LinkedIn: www.linkedin.com/in/feliciano-may-98b881318
-
-
-
 Juan Diego Aranguren: 
 
 Gmail: juandiegoarangurenmartinez@gmail.com 
@@ -204,25 +184,6 @@ Linkedin: www.linkedin.com/in/lautaro-de-león
 
  
 
-Tabaré Quintana:  
-
-Gmail: tabaquintana@gmail.com 
-
-Github: https://github.com/TabareQuintana 
-
-Linkedin: www.linkedin.com/in/nitquintana 
-
- 
-
-Feliciano May:  
-
-Gmail: felicianomay735@gmail.com 
-
-Github: https://github.com/Spongiboby 
-
-Linkedin: www.linkedin.com/in/feliciano-may-98b881318 
-
- 
 
 Juan Diego Aranguren:  
 
