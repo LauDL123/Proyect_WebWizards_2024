@@ -11,13 +11,11 @@ session_start();
 
     <title>Cerrajería Aranguren</title>
     <link rel="stylesheet" href="../css/estilo22.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
-
-
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
+    
     <script src="../Scripts/slider.js"></script>
     <script src="../Scripts/controlMenu.js"></script>
     
@@ -54,36 +52,36 @@ session_start();
         <div class="producto producto--default">
             <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Servicio 1</h3>
-                <p class="text-gray-600">Edita estas cosas tambien feli</p>
+                <h3 class="text-lg font-bold">Producto 1</h3>
+                <p class="text-gray-600">Descripción del producto 1.</p>
             </div>
 
         </div>
         <div class="producto producto--reverse">
-             <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">PServicio 2</h3>
-                <p class="text-gray-600">esto tenes que editar tambien</p>
+                <h3 class="text-lg font-bold">Producto 2</h3>
+                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
             </div>
+            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         <div class="producto producto--default">
             <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Servicio 3</h3>
-                <p class="text-gray-600">Edita esto tambien feli</p>
+                <h3 class="text-lg font-bold">Producto 1</h3>
+                <p class="text-gray-600">Descripción del producto 1.</p>
             </div>
         <!-- Añadir más productos según sea necesario -->
     </div>
 </div>
 
  <div class="producto producto--reverse">
-    <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Servicio 4</h3>
-                <p class="text-gray-600">Feli edita esto con un servicio real</p>
+                <h3 class="text-lg font-bold">Producto 2</h3>
+                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
             </div>
+            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
         </div>
 
     <!-- Botón flotante -->

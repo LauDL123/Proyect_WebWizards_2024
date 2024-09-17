@@ -5,7 +5,7 @@ session_start();
 <!-- Barra de menú -->
 <header>
 <div class="header__logo">
-<img src="../img/logoCerrajeria.jpg" alt="Logo de la Empresa" />
+<img src="../img/logoCerrajeria1.jpg" alt="Logo de la Empresa" />
     </div>
     <nav class="nav">
     <div class="menu-icon" onclick="toggleMenu()">

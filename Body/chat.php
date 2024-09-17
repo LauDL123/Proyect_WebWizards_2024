@@ -10,7 +10,6 @@ session_start();
     <title>Chat de Cerragería</title>
     <link rel="stylesheet" href="../css/estiloChat.css">
     <link rel="stylesheet" href="../css/estilo22.css">
-
     <script src="../Scripts/controlMenu.js"></script>
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
 </head>
