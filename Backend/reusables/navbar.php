@@ -8,6 +8,9 @@ session_start();
 <img src="../img/logoCerrajeria.jpg" alt="Logo de la Empresa" />
     </div>
     <nav class="nav">
+    <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
         <ul class="nav_ul">
             <li class="nav__li"><i class="fas fa-home"></i><a href="index.php">Inicio</a></li>
             <li class="nav__li"><i class="fa-solid fa-user"></i><a href="sobre_Nosotros.php">Sobre Nosotros</a></li>
@@ -26,7 +29,7 @@ session_start();
                         <span>' . $username . '</span>
                     </div>
                     <div class="user-menu" id="userMenu">
-                        <a href="../../Body/personalizar.php">Personalizar</a>
+                        <a href="../Body/personalizar.php">Personalizar</a>
                         <a href="../Backend/logout.php">Cerrar Sesión</a>
                     </div>';
                 } else {

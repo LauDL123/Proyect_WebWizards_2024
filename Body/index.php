@@ -16,10 +16,12 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
 
+
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
     <script src="../Scripts/slider.js"></script>
     <script src="../Scripts/controlMenu.js"></script>
+    
+
 </head>
 <body>
 
@@ -87,7 +89,7 @@ session_start();
     <!-- Botón flotante -->
 
 
-    <a href="mensaje.php" class="floating-button">
+    <a href="../Body/chat.php" class="floating-button">
     <i class="fa-solid fa-comment-dots"></i>
 </a>
 

@@ -2,11 +2,6 @@
 session_start();
 require 'backend_DB.php';
 
-if (!isset($_SESSION['username'])) {
-    header("Location: ../Body/Login_P.php");
-    exit();
-}
-
 $username = $_SESSION['username'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

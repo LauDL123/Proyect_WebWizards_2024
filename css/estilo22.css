@@ -109,9 +109,68 @@ header {
     background-color: #4299e1; /* Fondo azul al hacer hover */
     color: #ffffff; /* Texto blanco al hacer hover */
 }
+/* Estilos para móviles de la barra de menu*/
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
 
+    .nav_ul {
+        flex-direction: column;
+        gap: 0; /* Elimina el espacio entre los elementos en móvil */
+        width: 100%;
+    }
 
-/* Estilos generales del producto */
+    .nav__li {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav__li a {
+        width: 100%;
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .nav__li--right {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Icono de menú hamburguesa */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .nav_ul {
+        display: none;
+    }
+
+    .nav_ul.active {
+        display: block;
+    }
+}
+
+/* Estilos del menú hamburguesa */
+.menu-icon {
+    display: none; /* Oculto en versiones de escritorio */
+}
+
+/* Para dispositivos más pequeños */
+@media (max-width: 480px) {
+    .nav__li a {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+/* Estilos generales de servicios */
 .producto {
     display: flex;
     align-items: center;

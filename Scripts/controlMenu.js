@@ -12,3 +12,9 @@ document.addEventListener('click', function(event) {
         userMenu.classList.remove('show');
     }
 });
+
+
+function toggleMenu() {
+    const navUl = document.querySelector('.nav_ul');
+    navUl.classList.toggle('active');
+}
