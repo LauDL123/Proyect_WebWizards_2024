@@ -53,8 +53,10 @@
         <p>Precio: $XX.XX</p>
     </div>
 
-    <!-- Botón para mostrar el formulario de mensaje -->
-    <a href="mensaje.php" id="btn_mostrar_formulario">Enviar Mensaje</a>
+       <!-- Footer -->
+    <footer>
+      <?php include "../Backend/reusables/footer.php"?>
+    </footer>
 
    
 </div>

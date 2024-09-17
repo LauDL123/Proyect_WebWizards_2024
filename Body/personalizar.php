@@ -56,5 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="file" id="nuevo_foto" name="nuevo_foto" required><br><br>
         <button type="submit">Actualizar</button>
     </form>
-</body>
+       <!-- Footer -->
+    <footer>
+      <?php include "../Backend/reusables/footer.php"?>
+    </footer>
+    </body>
+
 </html>

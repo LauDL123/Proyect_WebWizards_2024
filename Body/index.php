@@ -59,8 +59,13 @@ session_start();
         </div>
         <div class="producto producto--reverse">
             <div class="producto-text">
+<<<<<<< Updated upstream
                 <h3 class="text-lg font-bold">Producto 2</h3>
                 <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
+=======
+                <h3 class="text-lg font-bold">Servicio 2</h3>
+                <p class="text-gray-600">esto tenes que editar tambien</p>
+>>>>>>> Stashed changes
             </div>
             <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
         </div>
@@ -93,9 +98,8 @@ session_start();
 
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 powered by WebWizards</p>
-        <p><a href="historial.php">Historial de la Empresa</a></p>
+    <footer>
+      <?php include "../Backend/reusables/footer.php"?>
     </footer>
     
 </body>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebWizards</title>
     <link rel="stylesheet" href="../css/estilo22.css">
-    <script src="../Scripts/controlMenu" defer></script>
+     <script src="../Scripts/controlMenu.js"></script>
     <link rel="icon" href="../img/key-chain.ico" type="image/x-icon">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,21 +40,12 @@
     <p>Github: <a href="https://github.com/Juandiex">https://github.com/Juandiex</a></p>
     <p>LinkedIn: <a href="">tiene que crearlo</a></p>
    </div>
-   <div>
-    <h3>Tabaré Quintana:</h3>
-
-    <p>Gmail: <a href="tabaquintana@gmail.com">tabaquintana@gmail.com</a></p>
-    <p>Github: <a href="https://github.com/TabareQuintana">https://github.com/TabareQuintana</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/nitquintana">www.linkedin.com/in/nitquintana</a></p>
-    </div>
     
-    <div>
-    <h3>Feliciano May</h3>
-
-    <p>Gmail: <a href="felicianomay735@gmail.com">felicianomay735@gmail.com</a></p>
-    <p>Github: <a href="https://github.com/Spongiboby">https://github.com/Spongiboby</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/feliciano-may-98b881318"> www.linkedin.com/in/feliciano-may-98b881318</a></p>
-    </div>
+    
 </div>
+   <!-- Footer -->
+    <footer>
+      <?php include "../Backend/reusables/footer.php"?>
+    </footer>
 </body>
 </html>

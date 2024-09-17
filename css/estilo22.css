@@ -399,14 +399,19 @@ header {
 /*Estilo Ayuda.php*/
 .ayuda{
     box-shadow: 5px 5px 5px 0.1;
-    
-    display: table;
-    border-spacing: 15px;
+    display:grid;
+    justify-items: stretch;
+   grid-template-columns:1fr 1fr 1fr 1fr;
+    gap: 20px;
 }
 
 .ayuda div{
+    transition: transform -1.3s ease;
     padding: 5px;
-    display: table-cell;
     background: #e0e0e0;
     border-radius: 20px;
+    text-align: center;
+}
+.ayuda div:hover{
+    transform:translateY(-10px);
 }

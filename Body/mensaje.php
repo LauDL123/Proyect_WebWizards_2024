@@ -22,7 +22,7 @@
     <?php include "../Backend/reusables/navbar.php"?>
 </header>
 
-    <div class="container">
+    < class="container">
         <h2>Enviar Mensaje</h2>
         <form action="procesar_mensaje.php" method="POST">
             <div class="input-group">
@@ -46,5 +46,9 @@
             </div>
         </form>
     </div>
+       <!-- Footer -->
+    <footer>
+      <?php include "../Backend/reusables/footer.php"?>
+    </footer>
 </body>
 </html>
