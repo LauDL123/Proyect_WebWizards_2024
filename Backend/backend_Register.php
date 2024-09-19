@@ -16,6 +16,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = mysqli_real_escape_string($conn, $address);
     $phone = mysqli_real_escape_string($conn, $phone);
 
+    // Verificar si el email ya está registrado
+    $checkEmailQuery = "SELECT id FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($checkEmailQuery);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        // Si el correo ya existe, mostrar mensaje de error
+        echo "<script>alert('El correo electrónico ya está registrado. Por favor, elija otro.'); window.location.href='../Body/Register.html';</script>";
+        $stmt->close();
+        $conn->close();
+        exit();
+    }
+
     // Hash de la contraseña
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 

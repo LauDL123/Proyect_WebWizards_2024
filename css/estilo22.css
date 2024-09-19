@@ -315,12 +315,24 @@ header {
     display: flex;
     align-items: center;
     cursor: pointer;
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color de texto */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+   
 }
 
 .user-info span {
     margin-left: 10px;
     font-size: 16px;
     font-weight: bold;
+
+}
+
+.user-info:hover{
+    background-color: #4299e1; /* Fondo azul */
+
 }
 
 .user-menu {
@@ -342,7 +354,7 @@ header {
 }
 
 .user-menu a:hover {
-    background-color: #f1f1f1;
+    background-color: #4299e1; /* Fondo azul */   
 }
 
 /* Mostrar el menú cuando se haga clic */

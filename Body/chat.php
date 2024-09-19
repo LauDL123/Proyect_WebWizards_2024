@@ -17,8 +17,7 @@ session_start();
     <?php include "../Backend/reusables/navbar.php"?>
 </header>
 <body>
-
-
+ 
     <h3><?php
             if (!isset($_SESSION['email'])) {
                 // Si no está logueado, redirige al login
@@ -31,6 +30,9 @@ session_start();
     </h3>
     <h1>Sistema de mensajeria en tiempo real</h1>
     <h3>En este campo, hablaras directamente con el dueño del establecimiento. Escribele un mensaje y se te notificara cuando te conteste. Es un sistema similar a Whatsapp</h3>
+   
+
+    
     <div class="chat-container">
         <div class="messages-container" id="mensajes">
           <!--aca se muestran los mensajes-->
@@ -41,7 +43,6 @@ session_start();
             <button onclick="enviarMensaje()">Enviar</button>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../Scripts/scriptChat.js"></script>
 </body>

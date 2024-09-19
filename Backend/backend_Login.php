@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Fallo en el inicio de sesión
-        echo "Usuario o contraseña incorrectos";
+        echo "<script>alert('Nombre o contraseña incorrectos, por favor intentelo de nuevo.'); window.location.href='../Body/Login_P.php';</script>";;
     }
 
     $stmt->close();
