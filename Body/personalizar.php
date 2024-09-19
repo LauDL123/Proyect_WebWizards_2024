@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'backend_DB.php';
 
-$username = $_SESSION['username'];
+
+$username = $_SESSION['email'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nuevo_nombre = $_POST['nuevo_nombre'];
@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php endif; ?>
     <form action="../Body/personalizar.php" method="POST" enctype="multipart/form-data">
         <label for="nuevo_nombre">Nuevo Nombre:</label>
+        <label for="nuevo_apelldo">Nuevo Apellido:</label>
         <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo $username; ?>" required><br><br>
         <label for="nuevo_foto">Nueva Foto:</label>
         <input type="file" id="nuevo_foto" name="nuevo_foto" required><br><br>
