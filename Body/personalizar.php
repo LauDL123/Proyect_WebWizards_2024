@@ -2,7 +2,7 @@
 session_start();
 require 'backend_DB.php';
 
-$username = $_SESSION['username'];
+$username = $_SESSION['email'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nuevo_nombre = $_POST['nuevo_nombre'];
