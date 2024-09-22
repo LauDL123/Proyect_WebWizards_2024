@@ -27,7 +27,12 @@ session_start();
     <?php endif; ?>
     <form action="../Body/personalizar.php" method="POST" enctype="multipart/form-data">
         <label for="nuevo_nombre">Nuevo Nombre:</label>
+<<<<<<< HEAD
         <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo $username; ?>" ><br><br>
+=======
+        <label for="nuevo_apelldo">Nuevo Apellido:</label>
+        <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo $username; ?>" required><br><br>
+>>>>>>> 991fb11733ccb13f614b2115163c29acb0c1c799
         <label for="nuevo_foto">Nueva Foto:</label>
         <input type="file" id="nuevo_foto" name="nuevo_foto"><br><br>
         <button type="submit">Actualizar</button>
