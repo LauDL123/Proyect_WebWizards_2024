@@ -19,23 +19,21 @@ session_start();
 <body>
  
     <h3><?php
-            if (!isset($_SESSION['email'])) {
+            if (!isset($_SESSION['id'])) {
                 // Si no está logueado, redirige al login
                 header("Location: Login_P.php");
                 exit();
-            }else {
-                echo "Bienvenido: " . $_SESSION['username'] ;
+            } else {
+                echo "Bienvenido: " . $_SESSION['username'];
             }
         ?>
     </h3>
-    <h1>Sistema de mensajeria en tiempo real</h1>
-    <h3>En este campo, hablaras directamente con el dueño del establecimiento. Escribele un mensaje y se te notificara cuando te conteste. Es un sistema similar a Whatsapp</h3>
-   
-
+    <h1>Sistema de mensajería en tiempo real</h1>
+    <h3>Habla directamente con el dueño del establecimiento. Escribe un mensaje y se te notificará cuando te conteste.</h3>
     
     <div class="chat-container">
         <div class="messages-container" id="mensajes">
-          <!--aca se muestran los mensajes-->
+          <!-- Aquí se mostrarán los mensajes -->
         </div>
         
         <div class="input-container">
@@ -43,6 +41,11 @@ session_start();
             <button onclick="enviarMensaje()">Enviar</button>
         </div>
     </div>
+
+    <script>
+        let id_usuario = <?php echo json_encode($_SESSION['id']); ?>; // ID del usuario logueado
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../Scripts/scriptChat.js"></script>
 </body>

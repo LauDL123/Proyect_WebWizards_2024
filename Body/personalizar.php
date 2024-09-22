@@ -1,30 +1,6 @@
 <?php
 session_start();
-require 'backend_DB.php';
 
-$username = $_SESSION['email'];
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nuevo_nombre = $_POST['nuevo_nombre'];
-    $nuevo_foto = $_FILES['nuevo_foto'];
-
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($nuevo_foto["name"]);
-    move_uploaded_file($nuevo_foto["tmp_name"], $target_file);
-
-    $sql = "UPDATE usuarios SET username = ?, foto = ? WHERE username = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $nuevo_nombre, $target_file, $username);
-
-    if ($stmt->execute()) {
-        $_SESSION['username'] = $nuevo_nombre;
-        $_SESSION['foto'] = $nuevo_foto["name"];
-        header("Location: ../Body/index.php");
-        exit();
-    } else {
-        $error = "Error al actualizar perfil";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -51,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php endif; ?>
     <form action="../Body/personalizar.php" method="POST" enctype="multipart/form-data">
         <label for="nuevo_nombre">Nuevo Nombre:</label>
-        <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo $username; ?>" required><br><br>
+        <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo $username; ?>" ><br><br>
         <label for="nuevo_foto">Nueva Foto:</label>
-        <input type="file" id="nuevo_foto" name="nuevo_foto" required><br><br>
+        <input type="file" id="nuevo_foto" name="nuevo_foto"><br><br>
         <button type="submit">Actualizar</button>
     </form>
        <!-- Footer -->

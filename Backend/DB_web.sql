@@ -120,8 +120,8 @@ CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  PRIMARY KEY('id'),
-  UNIQUE KEY 'email_UNIQUE' ('email')
+  PRIMARY KEY (`id`), -- Corregí las comillas aquí
+  UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

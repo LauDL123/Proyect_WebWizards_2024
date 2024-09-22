@@ -48,3 +48,35 @@ button {
 button:hover {
     background-color: #218838;
 }
+
+/* Estilos para los mensajes */
+.message {
+    display: inline-block;
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    clear: both;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+.message.admin {
+    background-color: #28a745; /* Verde para el admin */
+    align-self: flex-start;
+}
+
+.message.user {
+    background-color: #007bff; /* Azul para los usuarios normales */
+    align-self: flex-end;
+}
+
+/* Contenedor para los mensajes */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}

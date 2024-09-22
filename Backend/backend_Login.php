@@ -24,6 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['email'] = $user['email']; 
         $_SESSION['address'] = $user['address'];
         $_SESSION['phone'] = $user['phone'];
+        $_SESSION['id'] = $user['id'];  // Almacena el ID en la sesión
+
 
         // Redirigir a index.php
         header("Location: ../Body/index.php");
