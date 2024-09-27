@@ -1,9 +1,23 @@
-function toggleMenu() {
-    const navUl = document.getElementById('nav_ul');
-    navUl.classList.toggle('active');
-}
+$(document).ready(main);
 
-function toggleUserMenu() {
-    const userMenu = document.getElementById('userMenu');
-    userMenu.classList.toggle('active');
-}
+var contador = 1;
+
+function main(){
+	$('#barras').click(function(){
+		// $('nav').toggle(); 
+
+		if(contador == 1){
+			$('nav').animate({
+				left: '0'
+			});
+			contador = 0;
+		} else {
+			contador = 1;
+			$('nav').animate({
+				left: '-100%'
+			});
+		}
+
+	});
+
+};

@@ -24,8 +24,6 @@
 }
 
 
-
-
 body {
     font-family: 'Sen', sans-serif; /* Fuente personalizada */
     margin: 0;
@@ -33,142 +31,7 @@ body {
     background-color: #f7f7f7; /* Fondo gris claro */
 }
 
-header {
-    display: flex;
-    position: relative; /* Para colocar el logo en una posición específica */
-    background-color: #ffffff; /* Fondo blanco */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-}
 
-/* Estilo del logo */
-.header__logo {
-     /* No permite que el logo crezca ni se encoja */
-    margin-right: 2rem; /* Espacio entre el logo y el menú de navegación */
-}
-
-.header__logo img {
-    max-height: 100px; /* Ajusta la altura máxima del logo a 10px */
-     /* Mantiene las proporciones del logo */
-}
-
-
-.nav {
-    display: flex;
-    justify-content: space-between; /* Espaciado entre elementos */
-    /*background-color: rgb(47, 25, 189); /* Color de fondo de la barra de menú */
-    align-items: center;
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrando el nav */
-    text-align: right; /* Alineación de texto a la derecha */
-}
-
-.nav_ul {
-    list-style: none; /* Sin estilos de lista */
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1rem; /* Espaciado entre elementos */
-}
-
-.nav__li {
-    display: flex;
-    align-items: center; /* Alinea íconos y texto en el centro */
-}
-
-.nav__li a {
-    text-decoration: none; /* Sin subrayado */
-    color: #333; /* Color de texto */
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-}
-
-.nav__li a:hover {
-    background-color: #4299e1; /* Fondo azul al hacer hover */
-    color: #ffffff; /* Texto blanco al hacer hover */
-}
-
-.nav__li--right {
-    margin-left: auto; /* Empuja el elemento a la derecha */
-}
-
-.nav__li b
-.nav__li a {
-    text-decoration: none; /* Sin subrayado */
-    color: #333; /* Color de texto */
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-}
-
-.nav__li a:hover {
-    background-color: #4299e1; /* Fondo azul al hacer hover */
-    color: #ffffff; /* Texto blanco al hacer hover */
-}
-/* Estilos para móviles de la barra de menu*/
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-
-    .nav_ul {
-        flex-direction: column;
-        gap: 0; /* Elimina el espacio entre los elementos en móvil */
-        width: 100%;
-    }
-
-    .nav__li {
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .nav__li a {
-        width: 100%;
-        padding: 1rem;
-        border-bottom: 1px solid #ddd;
-        text-align: left;
-    }
-
-    .nav__li--right {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    /* Icono de menú hamburguesa */
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-        font-size: 2rem;
-        color: #333;
-    }
-
-    .nav_ul {
-        display: none;
-    }
-
-    .nav_ul.active {
-        display: block;
-    }
-}
-
-/* Estilos del menú hamburguesa */
-.menu-icon {
-    display: none; /* Oculto en versiones de escritorio */
-}
-
-/* Para dispositivos más pequeños */
-@media (max-width: 480px) {
-    .nav__li a {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-}
 
 /* Estilos generales de servicios */
 .producto {
@@ -225,9 +88,11 @@ header {
 }
 
 .user-menu {
+   
     display: none;
     position: absolute;
     right: 10px;
+    top: 100%;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -244,6 +109,11 @@ header {
 
 .user-menu a:hover {
     background-color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
 }
 
 
@@ -310,7 +180,7 @@ header {
     color: #3072b3; /* Texto azul más oscuro al hacer hover */
 }
 
-/*estilos para el perfil*/
+/*estilos para el menu perfil*/
 .user-info {
     display: flex;
     align-items: center;
@@ -338,6 +208,8 @@ header {
 .user-menu {
     display: none; /* Ocultar por defecto */
     position: absolute;
+    top: 100%;
+    right:0;
     background-color: white;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 10px;

@@ -1,16 +1,33 @@
 <?php
 session_start();
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <link rel="stylesheet" href="../css/css_navbar.css">
+    <title>intento 2 navbar responsive</title>
+</head>
+<body>
 
 <!-- Barra de menú -->
 <header>
+
 <div class="header__logo">
 <img src="../img/logoCerrajeria1.jpg" alt="Logo de la Empresa" />
     </div>
+
+    <div class="menu_bar">
+			<a href="#" class="bt-menu"><i id="barras" class="fas fa-bars"></i><img src="../img/logoCerrajeria1.jpg" alt="Logo de la Empresa" /></a>
+		</div>
+
+
     <nav class="nav">
-    <div class="menu-icon" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
+
         <ul class="nav_ul">
             <li class="nav__li"><i class="fas fa-home"></i><a href="index.php">Inicio</a></li>
             <li class="nav__li"><i class="fa-solid fa-user"></i><a href="sobre_Nosotros.php">Sobre Nosotros</a></li>
@@ -41,3 +58,6 @@ session_start();
         </ul>
     </nav>
 </header>
+<script src="../Scripts/navbarMobile.js"></script>
+</body>
+</html>

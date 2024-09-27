@@ -24,34 +24,42 @@
     <h1>Servicios</h1>
 
     <!-- Listado de servicios -->
-    <div class="producto1">
-        <h3>Producto 1</h3>
-        <p>Descripción del producto 1.</p>
-        <p>Precio: $XX.XX</p>
-    </div>
-    <div class="producto2">
-        <h3>Producto 2</h3>
-        <p>Descripción del producto 1.</p>
-        <p>Precio: $XX.XX</p>
-    </div>
+    <div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mt-8">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+        <div class="producto producto--default">
+            <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
+            <div class="producto-text">
+                <h3 class="text-lg font-bold">Producto 1</h3>
+                <p class="text-gray-600">Descripción del producto 1.</p>
+            </div>
 
-    <div class="producto3">
-        <h3>Producto 3</h3>
-        <p>Descripción del producto 1.</p>
-        <p>Precio: $XX.XX</p>
-    </div>
+        </div>
+        <div class="producto producto--reverse">
+            <div class="producto-text">
+                <h3 class="text-lg font-bold">Producto 2</h3>
+                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
+            </div>
+            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
+        </div>
 
-    <div class="producto4">
-        <h3>Producto 4</h3>
-        <p>Descripción del producto 1.</p>
-        <p>Precio: $XX.XX</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+        <div class="producto producto--default">
+            <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
+            <div class="producto-text">
+                <h3 class="text-lg font-bold">Producto 1</h3>
+                <p class="text-gray-600">Descripción del producto 1.</p>
+            </div>
+        <!-- Añadir más productos según sea necesario -->
     </div>
-
-    <div class="producto5">
-        <h3>Producto 5</h3>
-        <p>Descripción del producto 1.</p>
-        <p>Precio: $XX.XX</p>
-    </div>
+</div>
+<div class="producto producto--reverse">
+            <div class="producto-text">
+                <h3 class="text-lg font-bold">Producto 2</h3>
+                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
+            </div>
+            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
+        </div>
 
        <!-- Footer -->
     <footer>

@@ -1,0 +1,140 @@
+header {
+    display: flex;
+    position: relative; /* Para colocar el logo en una posición específica */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: sticky;
+    top: 0;
+    z-index: 1200; /* Asegura que el header esté por encima de otros elementos */
+    width:100%;
+}
+
+/* Estilo del logo */
+.header__logo {
+     /* No permite que el logo crezca ni se encoja */
+    margin-right: 2rem; /* Espacio entre el logo y el menú de navegación */
+}
+
+.header__logo img {
+    max-height: 100px; /* Ajusta la altura máxima del logo a 10px */
+     /* Mantiene las proporciones del logo */
+}
+
+.menu_bar {
+	display:none;
+}
+.nav {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre elementos */
+    /*background-color: rgb(47, 25, 189); /* Color de fondo de la barra de menú */
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrando el nav */
+    text-align: right; /* Alineación de texto a la derecha */
+}
+
+.nav_ul {
+    list-style: none; /* Sin estilos de lista */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem; /* Espaciado entre elementos */
+}
+
+.nav__li {
+    display: flex;
+    align-items: center; /* Alinea íconos y texto en el centro */
+}
+
+.nav__li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color de texto */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+.nav__li a:hover {
+    background-color: #4299e1; /* Fondo azul al hacer hover */
+    color: #ffffff; /* Texto blanco al hacer hover */
+}
+
+.nav__li--right {
+    margin-left: auto; /* Empuja el elemento a la derecha */
+}
+
+.nav__li b
+.nav__li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color de texto */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+.nav__li a:hover {
+    background-color: #4299e1; /* Fondo azul al hacer hover */
+    color: #ffffff; /* Texto blanco al hacer hover */
+}
+/* Estilos para móviles de la barra de menu*/
+@media screen and (max-width:800px ) {
+   
+    .header__logo{
+        display: none;
+    }
+
+    a.bt-menu{
+        width: 100%;
+    }
+
+
+	header nav {
+		width:35%;
+		height:100%;
+		left: -100%;
+		margin:0;
+		position: fixed;
+       background: #ffffff
+	}
+
+	header .nav_ul{
+		display:block;
+		float:none;
+		border-bottom:1px solid rgba(255,255,255, .3);
+	}
+
+	.menu_bar {
+		display:block;
+		width:100%;
+		background:#ccc;
+        z-index: 1000;
+	}
+
+	.menu_bar .bt-menu {
+        z-index: 1001;
+		display:block;
+		padding:20px;
+		background:#ffffff;
+		color:#fff;
+		text-decoration:none;
+		font-weight: bold;
+		font-size:25px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+        width: 100%;
+	}
+
+	.menu_bar i {
+		float:right;
+		font-size:40px;
+        margin-top: -5 px;
+
+    }
+    #barras{
+        color: #333;
+    }
+
+
+}
