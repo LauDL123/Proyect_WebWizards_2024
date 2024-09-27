@@ -21,8 +21,11 @@ session_start();
     <h3><?php
             if (!isset($_SESSION['id'])) {
                 // Si no está logueado, redirige al login
-                header("Location: Login_P.php");
-                exit();
+               echo '<script type="text/javascript">
+                alert("Se necesita iniciar sesión para acceder al chat en vivo");
+                window.location.href = "../Body/Login_P.php";
+              </script>';
+
             } else {
                 echo "Bienvenido: " . $_SESSION['username'];
             }

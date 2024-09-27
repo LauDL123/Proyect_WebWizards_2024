@@ -23,7 +23,7 @@ $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';// Servidor SMPT que usa gmail.
 $mail->SMTPAuth = true;
 $mail->Username = 'petisolombardo444@gmail.com';
-$mail->Password = 'PetisoBostero20';
+$mail->Password = 'dktgvxwwsyylbziy';
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
@@ -45,7 +45,14 @@ $mail->isHTML(true);
         
         // Enviar correo
         $mail->send();
-        echo "El mensaje ha sido enviado con éxito";
+        echo '<script type="text/javascript">
+                alert("Correo enviado con exito");
+                window.location.href = "../Body/mensaje.php";
+              </script>';
+
     } catch (Exception $e) {
-        echo "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
+        echo '<script type="text/javascript">
+                alert ("Hubo un error al enviar el mensaje: {$mail->ErrorInfo}");
+                window.location.href = "../Body/mensaje.php";
+              </script>';
     }

@@ -3,7 +3,7 @@ session_start();
 
 //Verificar si el usuario ha iniciado sesión
 // Si lo hizo autorellenar los campos
-if (isset($_SESSION['email'])) {
+if (isset($_SESSION['id'])) {
     $email = $_SESSION['email'];
     $address = $_SESSION['address'];
     $phone = $_SESSION['phone'];
@@ -42,7 +42,7 @@ if (isset($_SESSION['email'])) {
     <div class="container">
     <h3>
         <?php
-            if (!isset($_SESSION['email'])) {
+            if (!isset($_SESSION['id'])) {
                 // Si no está logueado, se le recomienda hacerlo
                 echo 'Para disfrutar de una mejor experiencia le recomendamos iniciar sesión, así tendrá acceso al chat en tiempo real. Si lo desea, hágalo desde aquí <a href="Login_P.php">Iniciar sesión</a>';
             } else {
