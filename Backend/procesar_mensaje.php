@@ -1,6 +1,5 @@
 <?php
 
-//ESTE CODIGO SE BORRA PORQUE NO FUNCIONA!!!!
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
