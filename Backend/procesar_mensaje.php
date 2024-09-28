@@ -21,8 +21,8 @@ try{
 $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';// Servidor SMPT que usa gmail.
 $mail->SMTPAuth = true;
-$mail->Username = 'petisolombardo444@gmail.com';
-$mail->Password = 'dktgvxwwsyylbziy';
+$mail->Username = 'cerrajeriaaranguren4@gmail.com';
+$mail->Password = 'quxjnbvucsdcxbtc';
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
@@ -30,7 +30,7 @@ $mail->Port = 587;
 $mail->setFrom($email, $nombre);
 
 //Destinatario: el admin
-$mail->addAddress('petisolombardo444@gmail.com', 'Administrador');
+$mail->addAddress('cerrajeriaaranguren4@gmail.com', 'Administrador');
 
 //contenido del correo enviado
 $mail->isHTML(true);
