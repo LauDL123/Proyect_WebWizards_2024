@@ -16,7 +16,13 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
     
+<<<<<<< Updated upstream
  
+=======
+
+    
+
+>>>>>>> Stashed changes
 </head>
 <body>
 
@@ -95,6 +101,8 @@ session_start();
     <footer>
       <?php include "../Backend/reusables/footer.php"?>
     </footer>
+    
+
     
 </body>
 </html>

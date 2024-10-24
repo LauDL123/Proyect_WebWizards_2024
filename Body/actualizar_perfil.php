@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Asignar un nombre único al archivo subido y especificar la ruta de destino
         $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
-        $uploadFileDir = './uploads/';
+        $uploadFileDir = '../Backend/uploads/';
         $photoPath = $uploadFileDir . $newFileName;
 
         // Mover el archivo subido al directorio de destino

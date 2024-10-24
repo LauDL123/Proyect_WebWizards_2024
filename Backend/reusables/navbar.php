@@ -14,12 +14,33 @@ session_start();
 </head>
 <body>
 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Responsiva - Cerrajería</title>
+    <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <link rel="stylesheet" href="css_navBar.css">
+    <script src="controlMenu.js"></script>
+</head>
+
+
+<body>
 <!-- Barra de menú -->
 <header>
+<<<<<<< Updated upstream
 
+=======
+    <!--Seccion para el logo-->
+>>>>>>> Stashed changes
 <div class="header__logo">
-<img src="../img/logoCerrajeria1.jpg" alt="Logo de la Empresa" />
+<a><img src="../img/logoCerrajeria1.jpg" alt="Logo de la Empresa" /><span id="barras" class="fas fa-bars"></span></a>
     </div>
+<<<<<<< Updated upstream
 
     <div class="menu_bar">
 			<a href="#" class="bt-menu"><i id="barras" class="fas fa-bars"></i><img src="../img/logoCerrajeria1.jpg" alt="Logo de la Empresa" /></a>
@@ -28,6 +49,9 @@ session_start();
 
     <nav class="nav">
 
+=======
+   
+>>>>>>> Stashed changes
         <ul class="nav_ul">
             <li class="nav__li"><i class="fas fa-home"></i><a href="index.php">Inicio</a></li>
             <li class="nav__li"><i class="fa-solid fa-user"></i><a href="sobre_Nosotros.php">Sobre Nosotros</a></li>
@@ -57,7 +81,13 @@ session_start();
             </li>
         </ul>
     </nav>
+    <script src="../Scripts/controlMenu.js"></script>
+    
 </header>
+<<<<<<< Updated upstream
 <script src="../Scripts/navbarMobile.js"></script>
+=======
+
+>>>>>>> Stashed changes
 </body>
 </html>

@@ -115,6 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p><?php echo $error; ?></p>
     <?php endif; ?>
     <form action="../Body/personalizar.php" method="POST" enctype="multipart/form-data">
+<<<<<<< Updated upstream
     <label for="nuevo_nombre">Nuevo Nombre:</label>
     <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo htmlspecialchars($username); ?>"><br><br>
     
@@ -133,6 +134,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <button type="submit">Actualizar</button>
 </form>
 
+=======
+        <label for="nuevo_nombre">Nuevo Nombre:</label>
+        <label for="nuevo_apelldo">Nuevo Apellido:</label>
+        <input type="text" id="nuevo_nombre" name="nuevo_nombre" value="<?php echo $username; ?>" required><br><br>
+        <label for="nuevo_foto">Nueva Foto:</label>
+        <input type="file" id="nuevo_foto" name="nuevo_foto"><br><br>
+        <button type="submit">Actualizar</button>
+    </form>
+>>>>>>> Stashed changes
        <!-- Footer -->
     <footer>
       <?php include "../Backend/reusables/footer.php"?>

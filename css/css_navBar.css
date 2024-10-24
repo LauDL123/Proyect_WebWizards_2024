@@ -1,0 +1,167 @@
+header {
+    display: flex;
+    position: relative; /* Para colocar el logo en una posición específica */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+/* Estilo del logo */
+.header__logo {
+     /* No permite que el logo crezca ni se encoja */
+    margin-right: 2rem; /* Espacio entre el logo y el menú de navegación */
+}
+
+.header__logo img {
+    max-height: 100px; /* Ajusta la altura máxima del logo a 10px */
+     /* Mantiene las proporciones del logo */
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre elementos */
+    /*background-color: rgb(47, 25, 189); /* Color de fondo de la barra de menú */
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrando el nav */
+    text-align: right; /* Alineación de texto a la derecha */
+}
+
+.nav_ul {
+    list-style: none; /* Sin estilos de lista */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem; /* Espaciado entre elementos */
+}
+
+.nav__li {
+    display: flex;
+    align-items: center; /* Alinea íconos y texto en el centro */
+}
+
+.nav__li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color de texto */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+.nav__li a:hover {
+    background-color: #4299e1; /* Fondo azul al hacer hover */
+    color: #ffffff; /* Texto blanco al hacer hover */
+}
+
+.nav__li--right {
+    margin-left: auto; /* Empuja el elemento a la derecha */
+}
+
+.nav__li b
+.nav__li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color de texto */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+.nav__li a:hover {
+    background-color: #4299e1; /* Fondo azul al hacer hover */
+    color: #ffffff; /* Texto blanco al hacer hover */
+}
+
+/* Estilos generales de servicios */
+.producto {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f0f0f0; /* Fondo gris claro */
+    overflow: hidden;
+}
+
+/* Disposición por defecto: imagen a la izquierda y texto a la derecha */
+.producto--default {
+    flex-direction: row;
+}
+
+/* Disposición alternada: texto a la izquierda y imagen a la derecha */
+.producto--reverse {
+    flex-direction: row-reverse;
+}
+
+.producto-img {
+    width: 30%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    object-fit: cover;
+}
+
+.producto-text {
+    width: 30%; /* Ajusta el tamaño del contenedor de texto */
+    padding: 1rem;
+}
+
+
+/*estilos generales*/
+.btn-contacto:hover {
+    background-color: #3072b3; /* Fondo azul más oscuro al hacer hover */
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.user-menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+
+#btn_mostrar_formulario {
+    background-color: #4299e1; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+#btn_mostrar_formulario:hover {
+    background-color: #3072b3; /* Fondo azul más oscuro al hacer hover */
+}
