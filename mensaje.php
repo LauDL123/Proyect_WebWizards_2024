@@ -21,10 +21,10 @@ if (isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajes</title>
-    <link rel="stylesheet" href="../css/enviarMensaje.css">
-    <link rel="stylesheet" href="../css/estilo22.css">
-    <script src="../Scripts/controlMenu.js"></script>
-    <link rel="icon" href="../img/key-chain.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/enviarMensaje.css">
+    <link rel="stylesheet" href="css/estilo22.css">
+    <script src="Scripts/controlMenu.js"></script>
+    <link rel="icon" href="img/key-chain.ico" type="image/x-icon">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@ if (isset($_SESSION['id'])) {
 <body>
 <!-- Barra de menú -->
 <header>
-    <?php include "../Backend/reusables/navbar.php"?>
+    <?php include "Backend/reusables/navbar.php"?>
 </header>
 
     <div class="container">
@@ -52,7 +52,7 @@ if (isset($_SESSION['id'])) {
     </h3>
 
     <h2>Enviar Mensaje</h2>
-        <form action="../Backend/procesar_mensaje.php" method="POST">
+        <form action="Backend/procesar_mensaje.php" method="POST">
             <div class="input-group">
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
@@ -80,7 +80,7 @@ if (isset($_SESSION['id'])) {
     </div>
        <!-- Footer -->
     <footer>
-      <?php include "../Backend/reusables/footer.php"?>
+      <?php include "Backend/reusables/footer.php"?>
     </footer>
 </body>
 </html>

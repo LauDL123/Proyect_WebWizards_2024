@@ -28,11 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         // Redirigir a index.php
-        header("Location: ../Body/index.php");
+        header("Location: ../index.php");
         exit();
     } else {
         // Fallo en el inicio de sesión
-        echo "<script>alert('Nombre o contraseña incorrectos, por favor intentelo de nuevo.'); window.location.href='../Body/Login_P.php';</script>";;
+        echo "<script>alert('Nombre o contraseña incorrectos, por favor intentelo de nuevo.'); window.location.href='../Login_P.php';</script>";;
     }
 
     $stmt->close();

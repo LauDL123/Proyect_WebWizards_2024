@@ -8,13 +8,13 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat de Cerragería</title>
-    <link rel="stylesheet" href="../css/estiloChat.css">
-    <link rel="stylesheet" href="../css/estilo22.css">
-    <script src="../Scripts/controlMenu.js"></script>
+    <link rel="stylesheet" href="css/estiloChat.css">
+    <link rel="stylesheet" href="css/estilo22.css">
+    <script src="Scripts/controlMenu.js"></script>
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
 </head>
 <header>
-    <?php include "../Backend/reusables/navbar.php"?>
+    <?php include "Backend/reusables/navbar.php"?>
 </header>
 <body>
  
@@ -23,7 +23,7 @@ session_start();
                 // Si no está logueado, redirige al login
                echo '<script type="text/javascript">
                 alert("Se necesita iniciar sesión para acceder al chat en vivo");
-                window.location.href = "../Body/Login_P.php";
+                window.location.href = "Login_P.php";
               </script>';
 
             } else {
@@ -50,6 +50,6 @@ session_start();
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../Scripts/scriptChat.js"></script>
+    <script src="Scripts/scriptChat.js"></script>
 </body>
 </html>

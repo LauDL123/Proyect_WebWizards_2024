@@ -46,12 +46,12 @@ $mail->isHTML(true);
         $mail->send();
         echo '<script type="text/javascript">
                 alert("Correo enviado con exito");
-                window.location.href = "../Body/mensaje.php";
+                window.location.href = "../mensaje.php";
               </script>';
 
     } catch (Exception $e) {
         echo '<script type="text/javascript">
                 alert ("Hubo un error al enviar el mensaje: {$mail->ErrorInfo}");
-                window.location.href = "../Body/mensaje.php";
+                window.location.href = "../mensaje.php";
               </script>';
     }

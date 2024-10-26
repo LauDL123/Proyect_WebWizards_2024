@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->num_rows > 0) {
         // Si el correo ya existe, mostrar mensaje de error
-        echo "<script>alert('El correo electrónico ya está registrado. Por favor, elija otro.'); window.location.href='../Body/Register.html';</script>";
+        echo "<script>alert('El correo electrónico ya está registrado. Por favor, elija otro.'); window.location.href='../Register.html';</script>";
         $stmt->close();
         $conn->close();
         exit();
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Iniciar sesión exitosamente y redirigir al login
-        header("Location: ../Body/Login_P.php?registro=exitoso");
+        header("Location: ../Login_P.php?registro=exitoso");
         exit();
     } else {
         echo "Error: " . $stmt->error;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="../css/css_Login.css">
+    <link rel="stylesheet" href="css/css_Login.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
                echo "<script>alert('Registro exitoso');</script>";
            }
            ?>
-           <form action="../Backend/backend_Login.php" method="POST">
+           <form action="Backend/backend_Login.php" method="POST">
               <div class="input-group">
                 <label for="login_username">Usuario 🔓</label>
                 <input type="text" id="login_username" name="username" required>

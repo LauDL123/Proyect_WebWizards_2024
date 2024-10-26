@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ayuda</title>
-        <link rel="stylesheet" href="../css/estilo22.css">
-        <script src="../Scripts/controlMenu.js"></script>
-        <link rel="icon" href="../img/key-chain.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/estilo22.css">
+        <script src="Scripts/controlMenu.js"></script>
+        <link rel="icon" href="img/key-chain.ico" type="image/x-icon">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
         <body>
         <div>
             <header>
-                <?php include "../Backend/reusables/navbar.php"?>
+                <?php include "Backend/reusables/navbar.php"?>
             </header>
         
         <h1>Ayuda</h1>
@@ -51,7 +51,7 @@
         </div>
             <!-- Footer -->
             <footer>
-                <?php include "../Backend/reusables/footer.php"?>
+                <?php include "Backend/reusables/footer.php"?>
             </footer>
     </body>
 </html>

@@ -7,22 +7,16 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/key-chain.ico" type="image/x-icon">
+    <link rel="icon" href="img/key-chain.ico" type="image/x-icon">
 
     <title>Cerrajería Aranguren</title>
-    <link rel="stylesheet" href="../css/estilo22.css">
+    <link rel="stylesheet" href="css/estilo22.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
     
-<<<<<<< Updated upstream
  
-=======
-
-    
-
->>>>>>> Stashed changes
 </head>
 <body>
 
@@ -32,16 +26,16 @@ session_start();
 
 <!-- Barra de menú -->
 <header>
-    <?php include "../Backend/reusables/navbar.php"?>
+    <?php include "Backend/reusables/navbar.php"?>
 </header>
 
     <!-- Carousel Start -->
     <div class="slider-frame" id="slider">
     <ul>
-        <li><img src="../img/cerrajeria1.JPG" alt="Imagen 1"></li>
-        <li><img src="../img/cerradura.jpg" alt="Imagen 2"></li>
-        <li><img src="../img/cerrajeria2.png" alt="Imagen 3"></li>
-        <li><img src="../img/img-Cerrajero.png" alt="Imagen 4"></li>
+        <li><img src="img/cerrajeria1.JPG" alt="Imagen 1"></li>
+        <li><img src="img/cerradura.jpg" alt="Imagen 2"></li>
+        <li><img src="img/cerrajeria2.png" alt="Imagen 3"></li>
+        <li><img src="img/img-Cerrajero.png" alt="Imagen 4"></li>
     </ul>
 </div>
 
@@ -90,19 +84,17 @@ session_start();
     <!-- Botón flotante -->
 
 
-    <a href="../Body/chat.php" class="floating-button">
+    <a href="chat.php" class="floating-button">
     <i class="fa-solid fa-comment-dots"></i>
 </a>
-<script src="../Scripts/slider.js"></script>
-    <script src="../Scripts/controlMenu.js"></script>
+<script src="Scripts/slider.js"></script>
+    <script src="Scripts/controlMenu.js"></script>
     
 
     <!-- Footer -->
     <footer>
-      <?php include "../Backend/reusables/footer.php"?>
+      <?php include "Backend/reusables/footer.php"?>
     </footer>
-    
-
     
 </body>
 </html>
