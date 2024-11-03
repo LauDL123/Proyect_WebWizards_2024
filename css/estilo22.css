@@ -32,44 +32,6 @@ body {
 }
 
 
-<<<<<<< Updated upstream
-=======
-.nav__li {
-    display: flex;
-    align-items: center; /* Alinea íconos y texto en el centro */
-}
-
-.nav__li a {
-    text-decoration: none; /* Sin subrayado */
-    color: #333; /* Color de texto */
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-}
-
-.nav__li a:hover {
-    background-color: #4299e1; /* Fondo azul al hacer hover */
-    color: #ffffff; /* Texto blanco al hacer hover */
-}
-
-.nav__li--right {
-    margin-left: auto; /* Empuja el elemento a la derecha */
-}
-
-.nav__li b
-.nav__li a {
-    text-decoration: none; /* Sin subrayado */
-    color: #333; /* Color de texto */
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-}
-
-.nav__li a:hover {
-    background-color: #4299e1; /* Fondo azul al hacer hover */
-    color: #ffffff; /* Texto blanco al hacer hover */
-}
->>>>>>> Stashed changes
 
 /* Estilos generales de servicios */
 .producto {

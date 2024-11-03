@@ -20,9 +20,7 @@ session_start();
 </head>
 <body>
 
-<?php
-session_start();
-?>
+
 
 <!-- Barra de menú -->
 <header>
@@ -81,15 +79,44 @@ session_start();
             <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
         </div>
 
-    <!-- Botón flotante -->
+
+        
+        <script src="Scripts/slider.js"></script>
+        <script src="Scripts/controlMenu.js"></script>
+ <!-- Botón flotante -->
 
 
-    <a href="chat.php" class="floating-button">
+ <a href="chat.php" class="floating-button">
     <i class="fa-solid fa-comment-dots"></i>
 </a>
-<script src="Scripts/slider.js"></script>
-    <script src="Scripts/controlMenu.js"></script>
-    
+
+<!-- Footer -->
+<footer>
+      <?php include "Backend/reusables/footer.php"?>
+    </footer>
+ 
+<div class="producto producto--reverse">
+<?php
+require_once 'backend_DB.php';
+
+$query = "SELECT * FROM Servicios";
+$result = $conn->query($query);
+
+while ($servicio = $result->fetch_assoc()) {
+    echo '
+    <div class="producto producto--reverse">
+        <div class="producto-text">
+            <h3 class="text-lg font-bold">' . htmlspecialchars($servicio['nombre']) . '</h3>
+            <p>Precio: $' . number_format($servicio['precio'], 2) . '</p>
+            <p class="text-gray-600">' . htmlspecialchars($servicio['descripcion']) . '</p>
+        </div>
+        <img src="' . htmlspecialchars($servicio['imagen']) . '" alt="' . htmlspecialchars($servicio['nombre']) . '" class="producto-img" />
+    </div>
+    ';
+}
+?>
+</div>
+
 
     <!-- Footer -->
     <footer>

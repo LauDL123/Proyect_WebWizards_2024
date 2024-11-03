@@ -26,7 +26,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['phone'] = $user['phone'];
         $_SESSION['id'] = $user['id'];  // Almacena el ID en la sesión
 
+          
+        // Verificar si el usuario es administrador
+        $queryAdminCheck = "SELECT id_usuario FROM Admin WHERE id_usuario = ?";
+        $stmtAdminCheck = $conn->prepare($queryAdminCheck);
+        $stmtAdminCheck->bind_param("i", $user['id']); // Asegúrate de usar el ID del usuario autenticado
+        $stmtAdminCheck->execute();
+        $resultAdminCheck = $stmtAdminCheck->get_result();
 
+        // Establecer el rol de administrador en la sesión
+        $_SESSION['is_admin'] = $resultAdminCheck->num_rows > 0;    
+        
+        
         // Redirigir a index.php
         header("Location: ../index.php");
         exit();
@@ -36,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
+    $stmtAdminCheck->close(); // Cierra el stmt de verificación de admin
 }
 $conn->close();
 ?>

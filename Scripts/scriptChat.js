@@ -53,3 +53,44 @@ function cargarMensajes() {
         console.error('Error al cargar los mensajes:', error);
     });
 }
+$(document).ready(function () {
+    if (es_admin) {
+        cargarClientes();
+    }
+
+    // Cargar clientes activos si el usuario es administrador
+    function cargarClientes() {
+        $.ajax({
+            url: 'Backend/obtenerClientes.php',
+            method: 'GET',
+            success: function (data) {
+                const clientes = JSON.parse(data);
+                const clientesLista = $('#clientes-activos');
+                clientesLista.empty();
+
+                clientes.forEach(cliente => {
+                    clientesLista.append(
+                        `<li onclick="cargarMensajesCliente(${cliente.id})">${cliente.nombre}</li>`
+                    );
+                });
+            }
+        });
+    }
+
+    // Cargar mensajes del cliente seleccionado
+    window.cargarMensajesCliente = function (clienteId) {
+        $.ajax({
+            url: 'Backend/obtenerMensajes.php',
+            method: 'POST',
+            data: { clienteId: clienteId },
+            success: function (data) {
+                const mensajes = JSON.parse(data);
+                $('#mensajes').empty();
+
+                mensajes.forEach(mensaje => {
+                    $('#mensajes').append(`<p>${mensaje.texto}</p>`);
+                });
+            }
+        });
+    };
+});

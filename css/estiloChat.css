@@ -80,3 +80,28 @@ button:hover {
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
+.chat-wrapper {
+    display: flex;
+}
+
+.clients-list {
+    width: 20%;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.clients-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.clients-list li {
+    cursor: pointer;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-container {
+    width: 80%;
+    padding: 20px;
+}

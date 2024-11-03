@@ -1,7 +1,7 @@
 <?php
 session_start();
+$is_admin = $_SESSION['role'] === 'admin'; // Suponiendo que entra el admin se asegura de la siguiente manera.
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,6 +34,16 @@ session_start();
     <h1>Sistema de mensajería en tiempo real</h1>
     <h3>Habla directamente con el dueño del establecimiento. Escribe un mensaje y se te notificará cuando te conteste.</h3>
     
+    <div class="chat-wrapper">
+        <?php if ($is_admin): ?>
+            <div class="clients-list">
+                <h4>Clientes</h4>
+                <ul id="clientes-activos">
+                    <!-- Aquí se cargarán los clientes activos -->
+                </ul>
+            </div>
+        <?php endif; ?>
+
     <div class="chat-container">
         <div class="messages-container" id="mensajes">
           <!-- Aquí se mostrarán los mensajes -->
@@ -47,6 +57,7 @@ session_start();
 
     <script>
         let id_usuario = <?php echo json_encode($_SESSION['id']); ?>; // ID del usuario logueado
+        let es_admin = <?php echo json_encode($is_admin); ?>;
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
