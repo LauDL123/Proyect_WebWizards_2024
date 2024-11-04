@@ -3,17 +3,15 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Define la ruta de la foto de usuario
-if (isset($_SESSION['foto'])) {
-    $photoPath = 'Backend/uploads/usuarios/' . $_SESSION['username'] . '/' . htmlspecialchars($_SESSION['foto']);
-    // Verifica si la foto existe
-    if (!file_exists($photoPath)) {
-        $photoPath = 'Backend/uploads/default.png'; // Usa una imagen por defecto si no se encuentra
-    }
+// Define la ruta de la foto de usuario desde la sesión
+if (isset($_SESSION['foto']) && !empty($_SESSION['foto']) && file_exists('uploads/' . $_SESSION['foto'])) {
+    $photoPath = 'uploads/' . $_SESSION['foto']; // Ruta correcta a la foto de perfil
 } else {
-    $photoPath = 'Backend/uploads/default.png'; 
+    // Usa una imagen por defecto si la foto no está definida o no existe el archivo
+    $photoPath = 'img/default.png';
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
