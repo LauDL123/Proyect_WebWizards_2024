@@ -25,12 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['address'] = $user['address'];
         $_SESSION['phone'] = $user['phone'];
         $_SESSION['id'] = $user['id'];  // Almacena el ID en la sesión
-
+        // Nueva funcionalidad:
+        $_SESSION['foto'] = $user['foto']; // Almacena la foto en la sesión
           
         // Verificar si el usuario es administrador
         $queryAdminCheck = "SELECT id_usuario FROM Admin WHERE id_usuario = ?";
         $stmtAdminCheck = $conn->prepare($queryAdminCheck);
-        $stmtAdminCheck->bind_param("i", $user['id']); // Asegúrate de usar el ID del usuario autenticado
+        $stmtAdminCheck->bind_param("i", $user['id']); 
         $stmtAdminCheck->execute();
         $resultAdminCheck = $stmtAdminCheck->get_result();
 
