@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow: hidden; /* Evita el scroll si el contenido es más grande que la pantalla */
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Altura completa de la ventana */
+}
+
+header {
+    background: #343a40;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    flex: 0 0 100%;
+}
+
+.sidebar {
+    width: 200px;
+    background: #212529;
+    color: #fff;
+    padding: 20px;
+    height: calc(100vh - 70px); /* Altura total menos la altura del header */
+    position: fixed; /* Fija la barra lateral */
+    top: 70px; /* Ajusta para que no cubra el header */
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background: #495057;
+}
+
+main {
+   
+    flex: 1;
+    padding: 20px;
+    margin-left: 220px; /* Espacio para la barra lateral */
+    background-color: #fff;
+    height: calc(100vh - 70px); /* Altura total menos la altura del header */
+    overflow-y: auto; /* Permite scroll si el contenido es más grande */
+}
+
+.grafica {
+    margin-top: 20px;
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.chart-placeholder {
+    height: 300px; /* Ajusta según el tamaño que necesites para el gráfico */
+    background-color: #ccc; /* Color de fondo para el espacio del gráfico */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #666;
+}

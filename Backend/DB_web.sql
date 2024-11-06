@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-11-2024 a las 15:23:11
+-- Tiempo de generación: 05-11-2024 a las 03:42:50
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -29,8 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Admin` (
   `id_usuario` int(11) DEFAULT NULL,
-  `privilegios` varchar(255) DEFAULT NULL
+  `privilegios` varchar(255) DEFAULT NULL,
+  `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `Admin`
+--
+
+INSERT INTO `Admin` (`id_usuario`, `privilegios`, `id_admin`) VALUES
+(5, 'todos', 1),
+(7, 'todos', 2);
 
 -- --------------------------------------------------------
 
@@ -40,8 +49,17 @@ CREATE TABLE `Admin` (
 
 CREATE TABLE `Clientes` (
   `id_usuario` int(11) DEFAULT NULL,
-  `direccion` varchar(255) DEFAULT NULL
+  `direccion` varchar(255) DEFAULT NULL,
+  `id_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `Clientes`
+--
+
+INSERT INTO `Clientes` (`id_usuario`, `direccion`, `id_cliente`) VALUES
+(8, 'hola 12020', 1),
+(11, 'usuario123', 2);
 
 -- --------------------------------------------------------
 
@@ -54,7 +72,8 @@ CREATE TABLE `Mensajes` (
   `contenido` text DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
-  `hora` time DEFAULT NULL
+  `hora` time DEFAULT NULL,
+  `tipo` enum('cliente','cerrajero') DEFAULT 'cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -92,7 +111,8 @@ CREATE TABLE `Pedido_Servicio` (
 CREATE TABLE `Recibos` (
   `id_recibo` int(11) NOT NULL,
   `contenido` text DEFAULT NULL,
-  `importe` decimal(10,2) DEFAULT NULL
+  `importe` decimal(10,2) DEFAULT NULL,
+  `id_pedido` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -102,9 +122,11 @@ CREATE TABLE `Recibos` (
 --
 
 CREATE TABLE `Servicios` (
-  `id_servicio` int(11) NOT NULL,
+  `id_servicio` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) DEFAULT NULL,
-  `precio` decimal(10,2) DEFAULT NULL
+  `descripcion` text DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -120,16 +142,19 @@ CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `foto` varchar(255) DEFAULT NULL
+  `foto` varchar(255) DEFAULT NULL,
+  `is_admin` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `password`, `email`, `address`, `phone`, `foto`) VALUES
-(1, 'juan', '$2y$10$DwLHS3NHAo0jaMJIHOsEAu8Pss1lMDVfqkA8CodYlQp5XBekvMTYu', 'test@example.us', '1600 Fake Street', '6019521325', NULL),
-(2, 'usuario1', '$2y$10$fd8EXBTVJi41Nin8xhYSMetbKsoi1Afmhed1KOPNEvwfYf00jDBeq', 'usu1@gmail.com', 'usuario12345', '091123456', NULL);
+INSERT INTO `usuarios` (`id`, `username`, `password`, `email`, `address`, `phone`, `foto`, `is_admin`) VALUES
+(5, 'nuevoAdmin', '$2y$10$1gkIcPlZv1oNE0z3stgVu.7Jn9dYG2iBgjpBq0WwpXyU52stPixv2', 'admin@example.com', '123 Admin St', '5551234567', NULL, 1),
+(7, 'Admin', '$2y$10$B2bIIIXxmbEHFg2ST7.MyubpA9frWsq5wd/jFDjWDVC4OKMKfzxxG', 'cerrajeriaaranguren4@gmail.com', '123 Admin St', '5551234567', NULL, 1),
+(8, 'juan', '$2y$10$4sP0oERqD1A3ptGTH5Tl0.gbtJCbMJJP1rhA1qcHsBNspoU3WHz..', 'juan12@gmail.com', 'hola 12020', '091123456', NULL, 0),
+(11, 'usuario1', '$2y$10$JYbdDOD7Vka0xZeOnoJY4OZRy8dxKIne.FC2aIk0uWl3wMUbi4mPS', 'usuario1@gmail.com', 'usuario123', '091123456', NULL, 0);
 
 --
 -- Índices para tablas volcadas
@@ -139,12 +164,14 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `email`, `address`, `phone
 -- Indices de la tabla `Admin`
 --
 ALTER TABLE `Admin`
+  ADD PRIMARY KEY (`id_admin`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `Clientes`
 --
 ALTER TABLE `Clientes`
+  ADD PRIMARY KEY (`id_cliente`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
@@ -159,7 +186,8 @@ ALTER TABLE `Mensajes`
 --
 ALTER TABLE `Pedidos`
   ADD PRIMARY KEY (`id_pedido`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `idx_estado_pedido` (`estado`);
 
 --
 -- Indices de la tabla `Pedido_Servicio`
@@ -172,30 +200,109 @@ ALTER TABLE `Pedido_Servicio`
 -- Indices de la tabla `Recibos`
 --
 ALTER TABLE `Recibos`
-  ADD PRIMARY KEY (`id_recibo`);
+  ADD PRIMARY KEY (`id_recibo`),
+  ADD KEY `Recibos_ibfk_1` (`id_pedido`);
 
 --
 -- Indices de la tabla `Servicios`
 --
 ALTER TABLE `Servicios`
-  ADD PRIMARY KEY (`id_servicio`);
+  ADD PRIMARY KEY (`id_servicio`),
+  ADD KEY `idx_nombre_servicio` (`nombre`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email_UNIQUE` (`email`);
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+-- AUTO_INCREMENT de la tabla `Admin`
+--
+ALTER TABLE `Admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `Clientes`
+--
+ALTER TABLE `Clientes`
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `Mensajes`
+--
+ALTER TABLE `Mensajes`
+  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `Pedidos`
+--
+ALTER TABLE `Pedidos`
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `Recibos`
+--
+ALTER TABLE `Recibos`
+  MODIFY `id_recibo` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `Servicios`
+--
+ALTER TABLE `Servicios`
+  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `Admin`
+--
+ALTER TABLE `Admin`
+  ADD CONSTRAINT `Admin_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `Clientes`
+--
+ALTER TABLE `Clientes`
+  ADD CONSTRAINT `Clientes_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `Mensajes`
+--
+ALTER TABLE `Mensajes`
+  ADD CONSTRAINT `Mensajes_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `Pedidos`
+--
+ALTER TABLE `Pedidos`
+  ADD CONSTRAINT `Pedidos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `Pedido_Servicio`
+--
+ALTER TABLE `Pedido_Servicio`
+  ADD CONSTRAINT `Pedido_Servicio_ibfk_1` FOREIGN KEY (`id_servicio`) REFERENCES `Servicios` (`id_servicio`),
+  ADD CONSTRAINT `Pedido_Servicio_ibfk_2` FOREIGN KEY (`id_pedido`) REFERENCES `Pedidos` (`id_pedido`);
+
+--
+-- Filtros para la tabla `Recibos`
+--
+ALTER TABLE `Recibos`
+  ADD CONSTRAINT `Recibos_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `Pedidos` (`id_pedido`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

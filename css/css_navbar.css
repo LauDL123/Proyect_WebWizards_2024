@@ -77,63 +77,98 @@ header {
     background-color: #4299e1; /* Fondo azul al hacer hover */
     color: #ffffff; /* Texto blanco al hacer hover */
 }
-/* Estilos para móviles de la barra de menu*/
-@media screen and (max-width:800px ) {
-   
-    .header__logo{
+
+
+/* Estilos para el menú en dispositivos móviles */
+@media screen and (max-width: 800px) {
+    /* Ocultar logo en móviles */
+    .header__logo {
         display: none;
     }
 
-    a.bt-menu{
+    /* Botón del menú en móviles */
+    a.bt-menu {
         width: 100%;
     }
 
-
-	header nav {
-		width:35%;
-		height:100%;
-		left: -100%;
-		margin:0;
-		position: fixed;
-       background: #ffffff
-	}
-
-	header .nav_ul{
-		display:block;
-		float:none;
-		border-bottom:1px solid rgba(255,255,255, .3);
-	}
-
-	.menu_bar {
-		display:block;
-		width:100%;
-		background:#ccc;
+    /* Estilo de la barra de navegación en móvil */
+    header nav {
+        width: 35%;
+        height: 100%;
+        left: -100%;
+        margin: 0;
+        position: fixed;
+        background: #ffffff;
+        top: 0;
         z-index: 1000;
-	}
-
-	.menu_bar .bt-menu {
-        z-index: 1001;
-		display:block;
-		padding:20px;
-		background:#ffffff;
-		color:#fff;
-		text-decoration:none;
-		font-weight: bold;
-		font-size:25px;
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		box-sizing:border-box;
-        width: 100%;
-	}
-
-	.menu_bar i {
-		float:right;
-		font-size:40px;
-        margin-top: -5 px;
-
+        transition: left 0.3s ease;
     }
-    #barras{
+
+    /* Estilo para los elementos de la lista en el menú móvil */
+    .nav_ul {
+        display: block;
+        float: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+    }
+
+    /* Barra de menú en móviles */
+    .menu_bar {
+        display: block;
+        width: 100%;
+        background: #ccc;
+        z-index: 1000;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Estilo del botón del menú */
+    .menu_bar .bt-menu {
+        z-index: 1001;
+        display: block;
+        padding: 20px;
+        background: #ffffff;
         color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 25px;
+        width: 100%;
+    }
+
+    /* Icono de menú */
+    .menu_bar i {
+        float: right;
+        font-size: 40px;
+        margin-top: -5px;
+    }
+
+    /* Color del texto */
+    #barras {
+        color: #333;
+    }
+
+    /* Al hacer clic en el botón de menú */
+    .menu_bar.open nav {
+        left: 0; /* Muestra el menú al hacer clic */
+    }
+
+    /* Estilos de los elementos del menú en la barra lateral */
+    .nav_ul li {
+        display: block;
+        text-align: left;
+        padding: 15px 20px;
+    }
+
+    .nav_ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 18px;
+        text-align: left;
+        color: #333;
+    }
+
+    .nav__li a:hover {
+        background-color: #4299e1;
+        color: #ffffff;
     }
 
 

@@ -1,0 +1,130 @@
+/* Reset de márgenes y rellenos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes */
+body {
+    font-family: 'Sen', sans-serif;
+    background-color: #f4f4f4;
+   
+}
+
+
+
+
+/* Título Panel de Administración */
+.titulo-panel {
+     top: 30px; 
+}
+
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barra lateral (Sidebar) */
+.sidebar {
+    width: 220px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #34495e;
+}
+
+/* Main content */
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Títulos */
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+/* Resumen */
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Gráfica */
+.grafica {
+    margin-top: 20px;
+}
+
+.chart-placeholder {
+    background-color: #ecf0f1;
+    height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7f8c8d;
+    font-size: 18px;
+}
+
+/* Responsive: Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}

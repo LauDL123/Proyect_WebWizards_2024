@@ -16,76 +16,54 @@
 </head>
 <body>
   <!-- Barra de menú -->
-<header>
-    <?php include "Backend/reusables/navbar.php"?>
-</header>
+  <header>
+    <?php include "Backend/reusables/navbar.php"; ?>
+  </header>
 
+  <h1>Servicios</h1>
 
-    <h1>Servicios</h1>
+  <!-- Listado de servicios -->
 
-    <!-- Listado de servicios -->
-    <div class="container mx-auto p-4">
+  <div class="container mx-auto p-4">
     <h2 class="text-2xl font-bold mt-8">Nuestros Servicios</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-        <div class="producto producto--default">
-            <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
-            <div class="producto-text">
-                <h3 class="text-lg font-bold">Instalacion de cerradura</h3>
-                <p class="text-gray-600">Descripción del producto 1.</p>
-            </div>
+      <?php
+      // Conexión a la base de datos
+      require_once 'Backend/backend_DB.php';
 
-        </div>
-        <div class="producto producto--reverse">
-            <div class="producto-text">
-                <h3 class="text-lg font-bold">Apertura de puertas</h3>
-                <p class="text-gray-600">Descripcion del producto 2</p>
-            </div>
-            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
-        </div>
+      // Obtener los servicios de la base de datos
+      $sql = "SELECT * FROM servicios WHERE visible = 1";
+      $result = $conn->query($sql);
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+      if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              $nombre = $row['nombre'];
+              $descripcion = $row['descripcion'];
+              $imagen = $row['imagen'];
+      ?>
         <div class="producto producto--default">
-            <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
+            <img src="img/<?php echo $imagen; ?>" alt="<?php echo $nombre; ?>" class="producto-img" />
             <div class="producto-text">
-                <h3 class="text-lg font-bold">Cambio de conbinacon</h3>
-                <p class="text-gray-600">Descripción del producto 1.</p>
+                <h3 class="text-lg font-bold"><?php echo $nombre; ?></h3>
+                <p class="text-gray-600"><?php echo $descripcion; ?></p>
             </div>
-        <!-- Añadir más productos según sea necesario -->
+        </div>
+      <?php
+          }
+      } else {
+          echo "<p>No se encontraron servicios disponibles.</p>";
+      }
+
+      // Cerrar la conexión
+      $conn->close();
+      ?>
     </div>
-</div>
+  </div>
 
- <div class="producto producto--reverse">
-            <div class="producto-text">
-                <h3 class="text-lg font-bold">duplicado de llaves</h3>
-                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
-            </div>
-            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
-        </div>
+  <!-- Footer -->
+  <footer>
+    <?php include "Backend/reusables/footer.php"; ?>
+  </footer>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-        <div class="producto producto--default">
-            <img src="https://placehold.co/300x200" alt="Product 1" class="producto-img" />
-            <div class="producto-text">
-                <h3 class="text-lg font-bold">Producto 1</h3>
-                <p class="text-gray-600">Descripción del producto 1.</p>
-            </div>
-        <!-- Añadir más productos según sea necesario -->
-    </div>
-</div>
-<div class="producto producto--reverse">
-            <div class="producto-text">
-                <h3 class="text-lg font-bold">Producto 2</h3>
-                <p class="text-gray-600">Hay que hacer que el texto quede en la izquierda y la imgen en la derecha, no centrada. producto 2.</p>
-            </div>
-            <img src="https://placehold.co/300x200" alt="Product 2" class="producto-img" />
-        </div>
-
-       <!-- Footer -->
-    <footer>
-      <?php include "Backend/reusables/footer.php"?>
-    </footer>
-
-   
-</div>
 </body>
 </html>

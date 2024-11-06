@@ -91,31 +91,9 @@ session_start();
 </a>
 
 <!-- Footer -->
-<footer>
-      <?php include "Backend/reusables/footer.php"?>
-    </footer>
+
  
-<div class="producto producto--reverse">
-<?php
-require_once 'backend_DB.php';
 
-$query = "SELECT * FROM Servicios";
-$result = $conn->query($query);
-
-while ($servicio = $result->fetch_assoc()) {
-    echo '
-    <div class="producto producto--reverse">
-        <div class="producto-text">
-            <h3 class="text-lg font-bold">' . htmlspecialchars($servicio['nombre']) . '</h3>
-            <p>Precio: $' . number_format($servicio['precio'], 2) . '</p>
-            <p class="text-gray-600">' . htmlspecialchars($servicio['descripcion']) . '</p>
-        </div>
-        <img src="' . htmlspecialchars($servicio['imagen']) . '" alt="' . htmlspecialchars($servicio['nombre']) . '" class="producto-img" />
-    </div>
-    ';
-}
-?>
-</div>
 
 
     <!-- Footer -->
