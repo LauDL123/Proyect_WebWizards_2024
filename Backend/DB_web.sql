@@ -122,7 +122,7 @@ CREATE TABLE `Recibos` (
 --
 
 CREATE TABLE `Servicios` (
-  `id_servicio` int(11) NOT NULL AUTO_INCREMENT,
+  `id_servicio` int(11) NOT NULL ,
   `nombre` varchar(255) DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
   `imagen` varchar(255) DEFAULT NULL,
@@ -142,19 +142,19 @@ CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `is_admin` tinyint(1) DEFAULT 0
+  `foto` varchar(255) DEFAULT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `password`, `email`, `address`, `phone`, `foto`, `is_admin`) VALUES
-(5, 'nuevoAdmin', '$2y$10$1gkIcPlZv1oNE0z3stgVu.7Jn9dYG2iBgjpBq0WwpXyU52stPixv2', 'admin@example.com', '123 Admin St', '5551234567', NULL, 1),
-(7, 'Admin', '$2y$10$B2bIIIXxmbEHFg2ST7.MyubpA9frWsq5wd/jFDjWDVC4OKMKfzxxG', 'cerrajeriaaranguren4@gmail.com', '123 Admin St', '5551234567', NULL, 1),
-(8, 'juan', '$2y$10$4sP0oERqD1A3ptGTH5Tl0.gbtJCbMJJP1rhA1qcHsBNspoU3WHz..', 'juan12@gmail.com', 'hola 12020', '091123456', NULL, 0),
-(11, 'usuario1', '$2y$10$JYbdDOD7Vka0xZeOnoJY4OZRy8dxKIne.FC2aIk0uWl3wMUbi4mPS', 'usuario1@gmail.com', 'usuario123', '091123456', NULL, 0);
+INSERT INTO `usuarios` (`id`, `username`, `password`, `email`, `address`, `phone`, `foto`) VALUES
+(5, 'nuevoAdmin', '$2y$10$1gkIcPlZv1oNE0z3stgVu.7Jn9dYG2iBgjpBq0WwpXyU52stPixv2', 'admin@example.com', '123 Admin St', '5551234567', NULL),
+(7, 'Admin', '$2y$10$B2bIIIXxmbEHFg2ST7.MyubpA9frWsq5wd/jFDjWDVC4OKMKfzxxG', 'cerrajeriaaranguren4@gmail.com', '123 Admin St', '5551234567', NULL),
+(8, 'juan', '$2y$10$4sP0oERqD1A3ptGTH5Tl0.gbtJCbMJJP1rhA1qcHsBNspoU3WHz..', 'juan12@gmail.com', 'hola 12020', '091123456', NULL),
+(11, 'usuario1', '$2y$10$JYbdDOD7Vka0xZeOnoJY4OZRy8dxKIne.FC2aIk0uWl3wMUbi4mPS', 'usuario1@gmail.com', 'usuario123', '091123456', NULL);
 
 --
 -- Índices para tablas volcadas
