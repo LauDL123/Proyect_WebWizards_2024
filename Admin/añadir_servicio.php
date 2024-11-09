@@ -27,14 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "Error al subir la imagen.";
             exit;
         }
-    // Asignar permisos 777 a la imagen subida
-    chmod($imagen_destino, 0777);
-} else {
-    echo "Por favor, sube una imagen válida.";
-    exit;
-}
-
-    
+        // Asignar permisos 777 a la imagen subida
+        chmod($imagen_destino, 0777);
+    } else {
+        echo "Por favor, sube una imagen válida.";
+        exit;
+    }
 
     // Insertar el nuevo servicio en la base de datos con la ruta de la imagen
     $sql = "INSERT INTO Servicios (nombre, descripcion, imagen, visible) VALUES (?, ?, ?, ?)";
@@ -42,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssss", $nombre, $descripcion, $imagen_nombre, $visible);
 
     if ($stmt->execute()) {
-        echo "Servicio añadido exitosamente.";
-        header("Location: ../index.php"); // Redirigir a index.php
+        // Redirige a la página de servicios después de añadir el servicio
+        header("Location: servicios.php?message=Servicio añadido exitosamente.");
         exit;
     } else {
         echo "Error al añadir el servicio: " . $conn->error;
@@ -60,7 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir Servicio</title>
-   
+    <link rel="stylesheet" href="../css/estilo22.css">
+    <link rel="stylesheet" href="css/styleServicios.css">
 </head>
 <body>
     <h2>Añadir Nuevo Servicio</h2>

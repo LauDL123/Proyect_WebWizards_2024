@@ -25,7 +25,6 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/key-chain.ico" type="image/x-icon">
-
     <title>Servicios</title>
     <link rel="stylesheet" href="../css/estilo22.css">
     <link rel="stylesheet" href="css/styleServicios.css">
@@ -35,15 +34,18 @@ error_reporting(E_ALL);
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-
-    <h1>Gestión de Servicios</h1>
+    <header>
+            <h1>Gestión de Servicios</h1>
         <nav>
             <a href="../adminPanel.php">Volver al Panel</a>
         </nav>
-        <nav>
-            <a href="Admin/añadir_servicio.php">añadir servicio</a>
-        </nav>
+    </header>
+
+
+    <h1>Lista de servicios</h1>
+    <nav>
+        <a href="añadir_servicio.php">Añadir Servicio</a>
+    </nav>
 
     <?php if ($resultado->num_rows > 0): ?>
     <table>
@@ -72,19 +74,19 @@ error_reporting(E_ALL);
                     <td>
                         <a href="editar_servicio.php?id=<?php echo $servicio['id_servicio']; ?>">Editar</a>
                         <?php if ($servicio['visible']) : ?>
-                            <a href="ocultar_servicio.php?id=<?php echo $servicio['id_servicio']; ?>">Ocultar</a>
+                            <a href="ocultarServicio.php?id=<?php echo $servicio['id_servicio']; ?>">Ocultar/Eliminar</a> |
                         <?php else : ?>
-                            <a href="mostrar_servicio.php?id=<?php echo $servicio['id_servicio']; ?>">Mostrar</a>
+                            <a href="mostrarServicio.php?id=<?php echo $servicio['id_servicio']; ?>">Mostrar/Recuperar</a> |
                         <?php endif; ?>
+                        <a href="eliminarServicio.php?id=<?php echo $servicio['id_servicio']; ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar este servicio?');">Eliminar Definitivamente</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
         </tbody>
     </table>
     <?php else: ?>
-        <p>No hay ningún servicio.</p>
+        <p>No hay ningún servicio registrado.</p>
     <?php endif; ?>
-
 
     <footer>
       <?php include "../Backend/reusables/footer.php"?>

@@ -32,7 +32,6 @@ body {
 }
 
 
-
 /* Estilos generales de servicios */
 .producto {
     display: flex;
@@ -61,10 +60,33 @@ body {
 }
 
 .producto-text {
-    width: 30%; /* Ajusta el tamaño del contenedor de texto */
+    width: 70%; /* Ajusta el tamaño del contenedor de texto */
     padding: 1rem;
 }
 
+.text-lg {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.text-gray-600 {
+    color: #4A5568;
+}
+
+/* Estilo para el botón de contacto */
+.btn-contacto {
+    background-color: #4299e1; /* Azul */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.btn-contacto:hover {
+    background-color: #3182ce; /* Cambio de color al pasar el mouse */
+}
 
 /*estilos generales*/
 .btn-contacto:hover {

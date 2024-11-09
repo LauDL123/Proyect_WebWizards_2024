@@ -138,4 +138,42 @@ td[colspan="5"] {
     color: #888;
 }
 
+/* Estilos para los botones en el formulario */
+form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
 
+form button:hover {
+    background-color: #0056b3;
+}
+
+form button:active {
+    background-color: #004085;
+}
+
+/* Botón de cancelar */
+form a {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    display: inline-block;
+}
+
+form a:hover {
+    background-color: #5a6268;
+}
+
+form a:active {
+    background-color: #4e555b;
+}

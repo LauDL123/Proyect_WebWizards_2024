@@ -1,81 +1,179 @@
-/* General */
-body {
-    font-family: 'Sen', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+/* Reset de márgenes y paddings */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Título */
-h1 {
-    text-align: center;
-    margin-top: 20px;
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Estilo para el header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
 }
 
 /* Navegación */
 nav {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
+    margin-top: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px;
-    margin: 0 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 1.1em;
 }
 
 nav a:hover {
-    background-color: #555;
+    text-decoration: underline;
 }
 
 /* Tabla */
 table {
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
+    margin-top: 20px;
     border-collapse: collapse;
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
-table thead {
-    background-color: #333;
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #2c3e50;
     color: white;
 }
 
-table th, table td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-table td img {
-    border-radius: 4px;
-}
-
 table td a {
-    color: #007bff;
+    color: #0066cc;
     text-decoration: none;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 3px;
-    transition: background-color 0.3s ease;
 }
 
 table td a:hover {
-    background-color: #f0f0f0;
+    text-decoration: underline;
 }
 
-/* Mensajes */
-p {
+/* Estilo para la alerta */
+.alert {
+    background-color: #ffcc00;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.alert.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Estilo global para todos los enlaces */
+a {
+    text-decoration: none;
+    color: inherit; /* Mantener el color por defecto */
+}
+
+/* Estilo específico para el enlace "Volver al Panel" */
+#volverPanel {
+    color: #fff; /* Color blanco para el texto */
+    background-color: #28a745; /* Fondo verde */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#volverPanel:hover {
+    background-color: #218838; /* Fondo verde más oscuro en hover */
+}
+
+#volverPanel:active {
+    background-color: #1e7e34; /* Fondo verde aún más oscuro cuando se hace clic */
+}
+
+/* Estilo para los enlaces de editar y eliminar */
+td a {
+    color: #007bff; /* Texto azul */
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+td a:hover {
+    background-color: #f1f1f1; /* Fondo gris claro en hover */
+    color: #0056b3; /* Color azul más oscuro en hover */
+}
+
+td a:active {
+    background-color: #e0e0e0; /* Fondo gris más oscuro cuando el enlace se activa */
+    color: #004085; /* Color azul más oscuro cuando se hace clic */
+}
+
+/* Estilo para el caso sin usuarios */
+td[colspan="5"] {
     text-align: center;
     font-size: 1.2em;
-    color: #666;
+    color: #888;
 }
 
+/* Estilos para los botones en el formulario */
+form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form button:active {
+    background-color: #004085;
+}
+
+/* Botón de cancelar */
+form a {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    display: inline-block;
+}
+
+form a:hover {
+    background-color: #5a6268;
+}
+
+form a:active {
+    background-color: #4e555b;
+}

@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt_update->execute()) {
         echo "Servicio actualizado correctamente.";
-        header("Location: gestionar_servicios.php");
+        header("Location: servicios.php");
         exit();
     } else {
         echo "Error al actualizar el servicio.";

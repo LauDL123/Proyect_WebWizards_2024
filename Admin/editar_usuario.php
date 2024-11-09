@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
@@ -12,7 +15,7 @@ if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
 
     // Obtener la información del usuario
-    $stmt = $conn->prepare("SELECT username, email, is_admin FROM usuarios WHERE id = ?");
+    $stmt = $conn->prepare("SELECT username, email FROM usuarios WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -27,12 +30,27 @@ if (isset($_GET['id'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $is_admin = isset($_POST['is_admin']) ? 1 : 0;
 
-    $stmt = $conn->prepare("UPDATE usuarios SET username = ?, email = ?, is_admin = ? WHERE id = ?");
-    $stmt->bind_param("ssii", $username, $email, $is_admin, $id);
+    // Corregir la consulta de actualización de usuario
+    $stmt = $conn->prepare("UPDATE usuarios SET username = ?, email = ? WHERE id = ?");
+    $stmt->bind_param("ssi", $username, $email, $id);
 
     if ($stmt->execute()) {
+        // Verificar si se presionó el botón de "Asignar Administrador"
+        if (isset($_POST['make_admin'])) {
+            $stmt = $conn->prepare("INSERT INTO Admin (id_usuario, privilegios) VALUES (?, 'todos')");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+        }
+
+        // Verificar si se presionó el botón de "Quitar Administrador"
+        if (isset($_POST['remove_admin'])) {
+            $stmt = $conn->prepare("DELETE FROM Admin WHERE id_usuario = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+        }
+
+        // Redirigir después de la actualización
         header("Location: usuarios.php");
         exit();
     } else {
@@ -40,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -60,10 +78,23 @@ $conn->close();
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
 
-        <div class="checkbox-container">
-        <label for="is_admin">Administrador:</label>
-        <input type="checkbox" name="is_admin" id="is_admin" <?php echo $user['is_admin'] ? 'checked' : ''; ?>>
-        </div>
+        <?php
+        // Verificar si el usuario ya es administrador
+        $is_admin = false;
+        $stmt = $conn->prepare("SELECT * FROM Admin WHERE id_usuario = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $admin_result = $stmt->get_result();
+        if ($admin_result->num_rows > 0) {
+            $is_admin = true;
+        }
+        ?>
+        
+        <?php if ($is_admin): ?>
+            <button type="submit" name="remove_admin">Quitar Administrador</button>
+        <?php else: ?>
+            <button type="submit" name="make_admin">Asignar Administrador</button>
+        <?php endif; ?>
 
         <button type="submit">Guardar Cambios</button>
         <a href="usuarios.php">Cancelar</a>
@@ -71,3 +102,7 @@ $conn->close();
 
 </body>
 </html>
+
+<?php
+$conn->close();
+?>

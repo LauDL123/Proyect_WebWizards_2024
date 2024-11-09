@@ -8,8 +8,11 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
 
 include '../Backend/backend_DB.php';
 
-// Obtener la lista de usuarios, incluyendo is_admin
-$query = "SELECT id, username, email, is_admin FROM usuarios";
+// Obtener la lista de usuarios y verificar si son administradores
+$query = "SELECT u.id, u.username, u.email, 
+                 CASE WHEN a.id_usuario IS NOT NULL THEN 'Sí' ELSE 'No' END AS es_admin
+          FROM usuarios u
+          LEFT JOIN Admin a ON u.id = a.id_usuario";
 $result = $conn->query($query);
 ?>
 
@@ -28,16 +31,17 @@ $result = $conn->query($query);
             <a id="volverPanel" href="../index.php">Volver al index</a>
         </nav>
     </header>
+    
     <h1>Lista de usuarios</h1>
-        <nav>
-            <a id="volverPanel" href="../adminPanel.php">Volver al Panel</a>
-        </nav>
+    <nav>
+        <a id="volverPanel" href="../adminPanel.php">Volver al Panel</a>
+    </nav>
     <main>
-    <?php if (isset($_GET['message'])): ?>
-        <div class="alert">
-            <?php echo htmlspecialchars($_GET['message']); ?>
-        </div>
-    <?php endif; ?>
+        <?php if (isset($_GET['message'])): ?>
+            <div class="alert">
+                <?php echo htmlspecialchars($_GET['message']); ?>
+            </div>
+        <?php endif; ?>
         <table>
             <thead>
                 <tr>
@@ -49,13 +53,12 @@ $result = $conn->query($query);
                 </tr>
             </thead>
             <tbody>
-                
                 <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
                     <td><?php echo htmlspecialchars($row['username']); ?></td>
                     <td><?php echo htmlspecialchars($row['email']); ?></td>
-                    <td><?php echo $row['is_admin'] == 1 ? 'Sí' : 'No'; ?></td>
+                    <td><?php echo $row['es_admin']; ?></td>
                     <td>
                         <a class="accion" href="editar_usuario.php?id=<?php echo $row['id']; ?>">Editar</a> |
                         <a class="accion" href="eliminar_usuario.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">Eliminar</a>
