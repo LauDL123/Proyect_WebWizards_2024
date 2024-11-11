@@ -46,13 +46,15 @@ $result = $conn->query($sql);
         <?php if ($result->num_rows > 0): ?>
             <?php while($row = $result->fetch_assoc()): ?>
                 <div class="producto producto--default">
-                    <img src="img/<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="producto-img" />
-                    <div class="producto-text">
-                        <h3 class="text-lg font-bold"><?php echo htmlspecialchars($row['nombre']); ?></h3>
-                        <p class="text-gray-600"><?php echo htmlspecialchars($row['descripcion']); ?></p>
-                        <a href="chat.php" class="contact-button" style="background-color: #4299e1; color: #fff; padding: 0.5rem 1rem; border-radius: 0.25rem; display: inline-block; margin-top: 0.5rem;">Contáctanos</a>
-                    </div>
-                </div>
+    <img src="img/<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="producto-img" />
+    <div class="producto-text">
+        <h3 class="text-lg font-bold"><?php echo htmlspecialchars($row['nombre']); ?></h3>
+        <p class="text-gray-600"><?php echo htmlspecialchars($row['descripcion']); ?></p>
+        <!-- Enlace al formulario de pedido con el ID del servicio correctamente asignado -->
+        <a href="generarPedido.php?id=1" class="contact-button" style="background-color: #4299e1; color: #fff; padding: 0.5rem 1rem; border-radius: 0.25rem; display: inline-block; margin-top: 0.5rem;">Seleccionar Servicio</a>
+    </div>
+</div>
+
             <?php endwhile; ?>
         <?php else: ?>
             <p>No hay servicios disponibles en este momento.</p>

@@ -6,34 +6,34 @@ use PHPMailer\PHPMailer\Exception;
 require '../vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-// Primero tomar los datos del formulario
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$numero = $_POST['numero'];
-$asunto = $_POST['asunto'];
-$mensaje = $_POST['mensaje'];
-//configurar el correo electronico
-$mail = new PHPMailer(true);
-}
+    // Primero tomar los datos del formulario
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $numero = $_POST['numero'];
+    $asunto = $_POST['asunto'];
+    $mensaje = $_POST['mensaje'];
 
-try{
-//configuracion del servidor gmail
-$mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';// Servidor SMPT que usa gmail.
-$mail->SMTPAuth = true;
-$mail->Username = 'cerrajeriaaranguren4@gmail.com';
-$mail->Password = 'quxjnbvucsdcxbtc';
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail->Port = 587;
+    // Configurar el correo electrónico
+    $mail = new PHPMailer(true);
 
-//Correo del usuario que relleno el formulario
-$mail->setFrom($email, $nombre);
+    try {
+        // Configuración del servidor Gmail
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';  // Servidor SMTP que usa Gmail
+        $mail->SMTPAuth = true;
+        $mail->Username = 'cerrajeriaaranguren4@gmail.com';  // correo
+        $mail->Password = 'zbmkzdusgifbjxea';  //contraseña de aplicación de Google
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-//Destinatario: el admin
-$mail->addAddress('cerrajeriaaranguren4@gmail.com', 'Administrador');
+        // Correo del usuario que rellenó el formulario
+        $mail->setFrom($email, $nombre);
 
-//contenido del correo enviado
-$mail->isHTML(true);
+        // Destinatario: el admin
+        $mail->addAddress('cerrajeriaaranguren4@gmail.com', 'Administrador');
+
+        // Contenido del correo enviado
+        $mail->isHTML(true);
         $mail->Subject = $asunto;
         $mail->Body    = "
         <h2>Nuevo mensaje de: $nombre</h2>
@@ -41,17 +41,23 @@ $mail->isHTML(true);
         <p><strong>Número de Teléfono:</strong> $numero</p>
         <p><strong>Mensaje:</strong></p>
         <p>$mensaje</p>";
-        
+
         // Enviar correo
-        $mail->send();
-        echo '<script type="text/javascript">
-                alert("Correo enviado con exito");
-                window.location.href = "../mensaje.php";
-              </script>';
+        if ($mail->send()) {
+            echo '<script type="text/javascript">
+                    alert("Correo enviado con éxito");
+                    window.location.href = "../mensaje.php";
+                  </script>';
+        } else {
+            throw new Exception('Error al enviar el correo');
+        }
 
     } catch (Exception $e) {
+        // Mostrar mensaje de error
         echo '<script type="text/javascript">
-                alert ("Hubo un error al enviar el mensaje: {$mail->ErrorInfo}");
+                alert("Hubo un error al enviar el mensaje: ' . $mail->ErrorInfo . '");
                 window.location.href = "../mensaje.php";
               </script>';
     }
+}
+?>

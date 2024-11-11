@@ -43,8 +43,8 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="Admin/usuarios.php">Gestionar Usuarios</a></li>
                     <li><a href="Admin/servicios.php">Gestionar Servicios</a></li>
-                    <li><a href="Admin/servicios.php">Gestionar Pedidos</a></li>
-                    <li><a href="estadisticas.php">Estadísticas</a></li>
+                    <li><a href="Admin/pedidos.php">Gestionar Pedidos</a></li>
+                    <li><a href="Admin/estadisticas.php">Estadísticas</a></li>
                     <li><a href="Backend/logout.php">Cerrar Sesión</a></li>
                     
                 </ul>

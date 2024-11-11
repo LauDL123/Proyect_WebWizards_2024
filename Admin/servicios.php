@@ -37,14 +37,14 @@ error_reporting(E_ALL);
     <header>
             <h1>Gestión de Servicios</h1>
         <nav>
-            <a href="../adminPanel.php">Volver al Panel</a>
+            <a id="volverPanel" href="../adminPanel.php">Volver al Panel</a>
         </nav>
     </header>
 
 
     <h1>Lista de servicios</h1>
     <nav>
-        <a href="añadir_servicio.php">Añadir Servicio</a>
+        <a id="volverPanel" href="añadir_servicio.php">Añadir Servicio</a>
     </nav>
 
     <?php if ($resultado->num_rows > 0): ?>

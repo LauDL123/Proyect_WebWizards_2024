@@ -19,9 +19,16 @@ $result = $conn->query($query);
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Usuarios</title>
+    <link rel="icon" href="../img/key-chain.ico" type="image/x-icon">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="../css/estilo22.css">
+    <link rel="stylesheet" href="css/styleServicios.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/usuarios.css">
 </head>
 <body>
@@ -73,7 +80,12 @@ $result = $conn->query($query);
             </tbody>
         </table>
     </main>
-</body>
+
+
+    <footer>
+      <?php include "../Backend/reusables/footer.php"?>
+    </footer>
+
 </html>
 
 <?php
