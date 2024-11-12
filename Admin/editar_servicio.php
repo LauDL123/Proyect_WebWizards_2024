@@ -1,4 +1,7 @@
 <?php
+// Display de errores
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
 // Verifica si el usuario tiene permisos de administrador
@@ -75,7 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <title>Editar Servicio</title>
     <link rel="stylesheet" href="../css/estilo22.css">
-    <link rel="stylesheet" href="../css/styleServicio.css">
+    <link rel="stylesheet" href="css/editarServicio.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">

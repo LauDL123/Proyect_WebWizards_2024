@@ -3,7 +3,7 @@ session_start();
 require_once 'Backend/backend_DB.php'; 
 
 // Consulta para obtener los servicios visibles
-$sql = "SELECT nombre, descripcion, imagen FROM Servicios WHERE visible = 1";
+$sql = "SELECT id_servicio, nombre, descripcion, imagen FROM Servicios WHERE visible = 1";
 $result = $conn->query($sql);
 ?>
 
@@ -32,7 +32,7 @@ $result = $conn->query($sql);
 <div class="container mx-auto p-4">
     <h2 class="text-2xl font-bold mt-8">Nuestros Servicios</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-
+        
         <?php if ($result->num_rows > 0): ?>
             <?php while($row = $result->fetch_assoc()): ?>
                 <div class="producto producto--default">
@@ -40,24 +40,24 @@ $result = $conn->query($sql);
                     <div class="producto-text">
                         <h3 class="text-lg font-bold"><?php echo htmlspecialchars($row['nombre']); ?></h3>
                         <p class="text-gray-600"><?php echo htmlspecialchars($row['descripcion']); ?></p>
-                        <a href="chat.php" class="contact-button" style="background-color: #4299e1; color: #fff; padding: 0.5rem 1rem; border-radius: 0.25rem; display: inline-block; margin-top: 0.5rem;">Contáctanos</a>
+                        <!-- Enlace al formulario de pedido con el ID del servicio -->
+                        <a href="generarPedido.php?id=<?php echo htmlspecialchars($row['id_servicio']); ?>" 
+                           class="contact-button" 
+                           style="background-color: #4299e1; color: #fff; padding: 0.5rem 1rem; border-radius: 0.25rem; display: inline-block; margin-top: 0.5rem;">
+                           Seleccionar Servicio
+                        </a>
                     </div>
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
             <p>No hay servicios disponibles en este momento.</p>
         <?php endif; ?>
-
     </div>
 </div>
 
-<script src="Scripts/slider.js"></script>
+
 <script src="Scripts/controlMenu.js"></script>
 
-<!-- Botón flotante -->
-<a href="chat.php" class="floating-button">
-    <i class="fa-solid fa-comment-dots"></i>
-</a>
 
 <!-- Footer -->
 <footer>

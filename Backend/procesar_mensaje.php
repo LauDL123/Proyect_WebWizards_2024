@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Configuración del servidor Gmail
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';  // Servidor SMTP que usa Gmail
+        $mail->Host = 'smtp.gmail.com'; 
         $mail->SMTPAuth = true;
         $mail->Username = 'cerrajeriaaranguren4@gmail.com';  // correo
         $mail->Password = 'zbmkzdusgifbjxea';  //contraseña de aplicación de Google

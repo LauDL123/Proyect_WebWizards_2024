@@ -66,7 +66,7 @@ error_reporting(E_ALL);
                     <td><?php echo htmlspecialchars($servicio['descripcion']); ?></td>
                     <td>
                         <?php if (!empty($servicio['imagen'])) : ?>
-                            <img src="img/<?php echo htmlspecialchars($servicio['imagen']); ?>" alt="Imagen de <?php echo htmlspecialchars($servicio['nombre']); ?>" width="100">
+                            <img src="../img/<?php echo htmlspecialchars($servicio['imagen']); ?>" alt="Imagen de <?php echo htmlspecialchars($servicio['nombre']); ?>" width="100">
                         <?php else : ?>
                             No hay imagen
                         <?php endif; ?>

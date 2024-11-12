@@ -1,22 +1,31 @@
 <?php
+// Display de errores
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+include "../Backend/backend_DB.php";
 session_start();
 
 // Verificar si el usuario tiene permisos de administrador
 if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    // Redirige al inicio si no es administrador
     header("Location: index.php");
     exit();
 }
 
-include "../Backend/backend_DB.php";
-
-// Consultar todos los pedidos
-$sql = "SELECT * FROM Pedidos";  
-$resultado = $conn->query($sql);
-
+// Configuración de errores para depuración
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+// Consulta para obtener todos los pedidos junto con el nombre del cliente desde la tabla usuarios
+$sql = "SELECT 
+            Pedidos.id_pedido, 
+            Pedidos.descripcion, 
+            Pedidos.estado, 
+            usuarios.username AS nombre_cliente
+        FROM Pedidos
+        INNER JOIN usuarios ON Pedidos.id_usuario = usuarios.id";
+
+$resultado = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -41,53 +50,59 @@ error_reporting(E_ALL);
         </nav>
     </header>
 
-    <h1>Lista de Pedidos</h1>
-    
-    <?php if ($resultado->num_rows > 0): ?>
-    <table>
-        <thead>
-            <tr>
-                <th>ID de Pedido</th>
-                <th>Cliente</th>
-                <th>Fecha de Pedido</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($pedido = $resultado->fetch_assoc()) : ?>
+    <main>
+        <h1>Lista de Pedidos</h1>
+        
+        <?php if ($resultado && $resultado->num_rows > 0): ?>
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
-                    <td><?php echo htmlspecialchars($pedido['nombre_cliente']); ?></td>
-                    <td><?php echo htmlspecialchars($pedido['fecha_pedido']); ?></td>
-                    <td>
-                        <?php 
-                            if ($pedido['estado'] == 1) {
-                                echo "Pendiente";
-                            } elseif ($pedido['estado'] == 2) {
-                                echo "Tomado";
-                            } else {
-                                echo "Finalizado";
-                            }
-                        ?>
-                    </td>
-                    <td>
-                        <?php if ($pedido['estado'] == 1): ?>
-                            <a href="Backend/tomar_pedido.php?id=<?php echo $pedido['id_pedido']; ?>" class="btn-tomar">Tomar Pedido</a>
-                        <?php elseif ($pedido['estado'] == 2): ?>
-                            <a href="Backend/finalizar_pedido.php?id=<?php echo $pedido['id_pedido']; ?>" class="btn-finalizar">Finalizar Pedido</a>
-                        <?php endif; ?>
-                    </td>
+                    <th>ID de Pedido</th>
+                    <th>Cliente</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
                 </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
-    <?php else: ?>
-        <p>No hay pedidos registrados.</p>
-    <?php endif; ?>
+            </thead>
+            <tbody>
+                <?php while ($pedido = $resultado->fetch_assoc()) : ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($pedido['id_pedido']); ?></td>
+                        <td><?php echo htmlspecialchars($pedido['nombre_cliente']); ?></td>
+                        <td><?php echo htmlspecialchars($pedido['descripcion']); ?></td>
+                        <td>
+                            <?php 
+                                if ($pedido['estado'] == "pendiente") {
+                                    echo "Pendiente";
+                                } elseif ($pedido['estado'] == "tomado") {
+                                    echo "Tomado";
+                                } else {
+                                    echo "Finalizado";
+                                }
+                            ?>
+                        </td>
+                        <td>
+                            <?php if ($pedido['estado'] == "pendiente"): ?>
+                                <a href="tomar_pedido.php?id=<?php echo $pedido['id_pedido']; ?>" class="btn-tomar">Tomar Pedido</a>
+                            <?php elseif ($pedido['estado'] == "tomado"): ?>
+                                <a href="finalizar_pedido.php?id=<?php echo $pedido['id_pedido']; ?>" class="btn-finalizar">Finalizar Pedido</a>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+        <?php else: ?>
+            <p>No hay pedidos registrados.</p>
+        <?php endif; ?>
+    </main>
 
     <footer>
-      <?php include "../Backend/reusables/footer.php"?>
+        <?php include "../Backend/reusables/footer.php"?>
     </footer>
 </body>
 </html>
+
+<?php
+$conn->close();
+?>

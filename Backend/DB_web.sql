@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-11-2024 a las 03:42:50
+-- Tiempo de generación: 12-11-2024 a las 05:46:41
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -59,7 +59,8 @@ CREATE TABLE `Clientes` (
 
 INSERT INTO `Clientes` (`id_usuario`, `direccion`, `id_cliente`) VALUES
 (8, 'hola 12020', 1),
-(11, 'usuario123', 2);
+(11, 'usuario123', 2),
+(13, '23123sadasd', 4);
 
 -- --------------------------------------------------------
 
@@ -90,6 +91,14 @@ CREATE TABLE `Pedidos` (
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `Pedidos`
+--
+
+INSERT INTO `Pedidos` (`id_pedido`, `descripcion`, `direccion`, `estado`, `id_usuario`) VALUES
+(11, 'hola si', NULL, 'pendiente', 8),
+(12, 'gfgggg', NULL, 'pendiente', 7);
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +110,38 @@ CREATE TABLE `Pedido_Servicio` (
   `id_pedido` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `Pedido_Servicio`
+--
+
+INSERT INTO `Pedido_Servicio` (`id_servicio`, `id_pedido`, `cantidad`) VALUES
+(1, 2, NULL),
+(4, 2, NULL),
+(1, 3, NULL),
+(3, 3, NULL),
+(1, 4, NULL),
+(3, 4, NULL),
+(1, 5, NULL),
+(3, 5, NULL),
+(1, 6, NULL),
+(3, 6, NULL),
+(1, 7, NULL),
+(3, 7, NULL),
+(1, 8, NULL),
+(3, 8, NULL),
+(1, 9, NULL),
+(3, 9, NULL),
+(4, 9, NULL),
+(3, 10, NULL),
+(1, 10, NULL),
+(4, 10, NULL),
+(1, 11, NULL),
+(3, 11, NULL),
+(4, 11, NULL),
+(1, 12, NULL),
+(3, 12, NULL),
+(4, 12, NULL);
 
 -- --------------------------------------------------------
 
@@ -122,12 +163,21 @@ CREATE TABLE `Recibos` (
 --
 
 CREATE TABLE `Servicios` (
-  `id_servicio` int(11) NOT NULL ,
+  `id_servicio` int(11) NOT NULL,
   `nombre` varchar(255) DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
   `imagen` varchar(255) DEFAULT NULL,
   `visible` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `Servicios`
+--
+
+INSERT INTO `Servicios` (`id_servicio`, `nombre`, `descripcion`, `imagen`, `visible`) VALUES
+(1, 'MyQueEsEsoReaction', 'Que es eso', 'images.jpeg', 1),
+(3, 'Apertura de cerraduras', 'apertura de puertas', 'servicio_673150dd335e7.jpg', 1),
+(4, 'Duplicado de llaves', 'Duplicamos llaves de cualquier tipo', 'servicio_67315461530fc.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +193,6 @@ CREATE TABLE `usuarios` (
   `address` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `foto` varchar(255) DEFAULT NULL
-  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -154,7 +203,8 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `email`, `address`, `phone
 (5, 'nuevoAdmin', '$2y$10$1gkIcPlZv1oNE0z3stgVu.7Jn9dYG2iBgjpBq0WwpXyU52stPixv2', 'admin@example.com', '123 Admin St', '5551234567', NULL),
 (7, 'Admin', '$2y$10$B2bIIIXxmbEHFg2ST7.MyubpA9frWsq5wd/jFDjWDVC4OKMKfzxxG', 'cerrajeriaaranguren4@gmail.com', '123 Admin St', '5551234567', NULL),
 (8, 'juan', '$2y$10$4sP0oERqD1A3ptGTH5Tl0.gbtJCbMJJP1rhA1qcHsBNspoU3WHz..', 'juan12@gmail.com', 'hola 12020', '091123456', NULL),
-(11, 'usuario1', '$2y$10$JYbdDOD7Vka0xZeOnoJY4OZRy8dxKIne.FC2aIk0uWl3wMUbi4mPS', 'usuario1@gmail.com', 'usuario123', '091123456', NULL);
+(11, 'usuario1', '$2y$10$JYbdDOD7Vka0xZeOnoJY4OZRy8dxKIne.FC2aIk0uWl3wMUbi4mPS', 'usuario1@gmail.com', 'usuario123', '091123456', NULL),
+(13, 'registro2', '$2y$10$qvQZnwZSGACcmhVMtenLOOdNJ2GfAZ2QpQeOyS3bXDcfwY8NPnG1O', 'registro@gmail.com', '23123sadasd', '1321344', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -225,13 +275,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `Admin`
 --
 ALTER TABLE `Admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `Clientes`
 --
 ALTER TABLE `Clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `Mensajes`
@@ -243,7 +293,7 @@ ALTER TABLE `Mensajes`
 -- AUTO_INCREMENT de la tabla `Pedidos`
 --
 ALTER TABLE `Pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `Recibos`
@@ -255,13 +305,13 @@ ALTER TABLE `Recibos`
 -- AUTO_INCREMENT de la tabla `Servicios`
 --
 ALTER TABLE `Servicios`
-  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
