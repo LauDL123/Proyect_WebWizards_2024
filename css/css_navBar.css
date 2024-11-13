@@ -5,8 +5,7 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     position: sticky;
     top: 0;
-    z-index: 1200; /* Asegura que el header esté por encima de otros elementos */
-    width:100%;
+    z-index: 1000;
 }
 
 /* Estilo del logo */
@@ -20,9 +19,6 @@ header {
      /* Mantiene las proporciones del logo */
 }
 
-.menu_bar {
-	display:none;
-}
 .nav {
     display: flex;
     justify-content: space-between; /* Espaciado entre elementos */
@@ -79,97 +75,93 @@ header {
 }
 
 
-/* Estilos para el menú en dispositivos móviles */
-@media screen and (max-width: 800px) {
-    /* Ocultar logo en móviles */
-    .header__logo {
-        display: none;
-    }
+/* Estilos generales de servicios */
+.producto {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f0f0f0; /* Fondo gris claro */
+    overflow: hidden;
+}
 
-    /* Botón del menú en móviles */
-    a.bt-menu {
-        width: 100%;
-    }
+/* Disposición por defecto: imagen a la izquierda y texto a la derecha */
+.producto--default {
+    flex-direction: row;
+}
 
-    /* Estilo de la barra de navegación en móvil */
-    header nav {
-        width: 35%;
-        height: 100%;
-        left: -100%;
-        margin: 0;
-        position: fixed;
-        background: #ffffff;
-        top: 0;
-        z-index: 1000;
-        transition: left 0.3s ease;
-    }
+/* Disposición alternada: texto a la izquierda y imagen a la derecha */
+.producto--reverse {
+    flex-direction: row-reverse;
+}
 
-    /* Estilo para los elementos de la lista en el menú móvil */
-    .nav_ul {
-        display: block;
-        float: none;
-        border-bottom: 1px solid rgba(255, 255, 255, .3);
-    }
+.producto-img {
+    width: 30%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    object-fit: cover;
+}
 
-    /* Barra de menú en móviles */
-    .menu_bar {
-        display: block;
-        width: 100%;
-        background: #ccc;
-        z-index: 1000;
-        padding: 20px;
-        text-align: center;
-    }
-
-    /* Estilo del botón del menú */
-    .menu_bar .bt-menu {
-        z-index: 1001;
-        display: block;
-        padding: 20px;
-        background: #ffffff;
-        color: #333;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 25px;
-        width: 100%;
-    }
-
-    /* Icono de menú */
-    .menu_bar i {
-        float: right;
-        font-size: 40px;
-        margin-top: -5px;
-    }
-
-    /* Color del texto */
-    #barras {
-        color: #333;
-    }
-
-    /* Al hacer clic en el botón de menú */
-    .menu_bar.open nav {
-        left: 0; /* Muestra el menú al hacer clic */
-    }
-
-    /* Estilos de los elementos del menú en la barra lateral */
-    .nav_ul li {
-        display: block;
-        text-align: left;
-        padding: 15px 20px;
-    }
-
-    .nav_ul li a {
-        display: block;
-        padding: 10px;
-        font-size: 18px;
-        text-align: left;
-        color: #333;
-    }
-
-    .nav__li a:hover {
-        background-color: #4299e1;
-        color: #ffffff;
-    }
+.producto-text {
+    width: 30%; /* Ajusta el tamaño del contenedor de texto */
+    padding: 1rem;
+}
 
 
+/*estilos generales*/
+.btn-contacto:hover {
+    background-color: #3072b3; /* Fondo azul más oscuro al hacer hover */
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.user-menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+
+#btn_mostrar_formulario {
+    background-color: #4299e1; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+#btn_mostrar_formulario:hover {
+    background-color: #3072b3; /* Fondo azul más oscuro al hacer hover */
 }
