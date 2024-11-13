@@ -17,7 +17,7 @@
 <body>
     <!-- Barra de menú -->
 <header>
-    <?php include "Backend/reusables/navbar.php"?>
+    <?php include "../Backend/reusables/navbar.php"?>
 </header>
 
     <h1>Team WebWizards:</h1>
