@@ -85,8 +85,23 @@ $resultado = $conn->query($sql);
                             <?php if ($pedido['estado'] == "pendiente"): ?>
                                 <a href="tomar_pedido.php?id=<?php echo $pedido['id_pedido']; ?>" class="btn-tomar">Tomar Pedido</a>
                             <?php elseif ($pedido['estado'] == "tomado"): ?>
-                                <a href="finalizar_pedido.php?id=<?php echo $pedido['id_pedido']; ?>" class="btn-finalizar">Finalizar Pedido</a>
-                            <?php endif; ?>
+                                <a href="formulario_final.php?id=<?php echo $pedido['id_pedido']; ?>" class="btn-finalizar">Finalizar Pedido</a>
+                                <?php 
+        elseif ($pedido['estado'] == "finalizado"): 
+            // Ruta del archivo PDF de la factura
+            $archivoPDF = "../facturas/factura_" . $pedido['id_pedido'] . ".pdf";
+            
+            // Verificar si el archivo PDF existe
+            if (file_exists($archivoPDF)): 
+    ?>
+        <a href="<?php echo $archivoPDF; ?>" target="_blank" class="btn-ver-factura">Ver Factura</a>
+    <?php 
+            else:
+                echo "Factura no disponible";
+            endif;
+    ?>
+    <?php endif; ?>
+
                         </td>
                     </tr>
                 <?php endwhile; ?>

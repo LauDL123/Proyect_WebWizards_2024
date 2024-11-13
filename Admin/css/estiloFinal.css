@@ -1,0 +1,85 @@
+/* Estilo general para la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center; /* Centra el texto */
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilo para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que el formulario ocupe todo el espacio disponible */
+}
+
+/* Estilo para los campos de servicio (precio y cantidad) */
+.campo-servicio {
+    margin-bottom: 20px; /* Aumenta el espaciado entre los campos */
+    width: 100%;
+}
+
+.campo-servicio label {
+    font-size: 18px; /* Aumenta el tamaño de la fuente de los labels */
+    color: #333;
+    margin-bottom: 10px; /* Aumenta el espaciado entre el texto y el campo */
+    display: block;
+}
+
+.campo-servicio input[type="number"] {
+    padding: 12px; /* Aumenta el padding dentro de los campos */
+    width: 100%; /* Asegura que el campo ocupe todo el ancho disponible */
+    font-size: 16px; /* Aumenta el tamaño de la fuente en los campos */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para la información del cliente */
+.informacion-cliente {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%; /* Asegura que el recuadro no se salga del formulario */
+    margin-bottom: 25px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho del recuadro */
+}
+
+.informacion-cliente p {
+    font-size: 18px; /* Aumenta el tamaño de la fuente de los párrafos */
+    margin: 5px 0;
+}
+
+.informacion-cliente strong {
+    color: #333;
+}
+
+/* Estilo para el botón */
+button {
+    padding: 14px 20px; /* Aumenta el tamaño del botón */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Aumenta el tamaño de la fuente del botón */
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
