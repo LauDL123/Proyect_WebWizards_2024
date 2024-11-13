@@ -21,7 +21,7 @@ function actualizar_estado_pedido($id_pedido, $estado) {
     global $conn;
     $sql = "UPDATE Pedidos SET estado = ? WHERE id_pedido = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $estado, $id_pedido);  // Usar 's' para la cadena en lugar de 'i'
+    $stmt->bind_param("si", $estado, $id_pedido); 
     return $stmt->execute();
 }
 
@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
         
         if ($resultado->num_rows > 0) {
             $cliente = $resultado->fetch_assoc();
-            $nombre_cliente = $cliente['username'];  // Usamos 'username' según la base de datos
+            $nombre_cliente = $cliente['username'];  
             $email_cliente = $cliente['email'];
 
             // Configurar PHPMailer para enviar el correo
@@ -55,11 +55,11 @@ if (isset($_GET['id'])) {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'cerrajeriaaranguren4@gmail.com'; // Asegúrate de utilizar una cuenta válida
-                $mail->Password = 'zbmkzdusgifbjxea'; // Asegúrate de utilizar una contraseña válida
+                $mail->Username = 'cerrajeriaaranguren4@gmail.com'; 
+                $mail->Password = 'zbmkzdusgifbjxea'; 
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
-                $mail->setFrom('cerrajeriaaranguren4@gmail.com', 'Administrador');
+                $mail->setFrom('cerrajeriaaranguren4@gmail.com', 'Cerrajeria Aranguren');
                 $mail->addAddress($email_cliente, $nombre_cliente);
                 $mail->isHTML(true);
                 $mail->Subject = 'Pedido Tomado';

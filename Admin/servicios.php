@@ -79,6 +79,7 @@ error_reporting(E_ALL);
                             <a href="mostrarServicio.php?id=<?php echo $servicio['id_servicio']; ?>">Mostrar/Recuperar</a> |
                         <?php endif; ?>
                         <a href="eliminarServicio.php?id=<?php echo $servicio['id_servicio']; ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar este servicio?');">Eliminar Definitivamente</a>
+
                     </td>
                 </tr>
             <?php endwhile; ?>
