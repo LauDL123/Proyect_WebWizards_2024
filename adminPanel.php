@@ -24,6 +24,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2ff8e04842.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     
 </head>
@@ -54,7 +55,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
         <main>
             <section>
                 <h2>Resumen</h2>
-                <p>deberia ir contenido</p>
+                
                 <div class="grafica">
                     <h3>Gráfico de Productos Disponibles</h3>
                     <div class="chart-placeholder">[Gráfico Aquí]</div>
@@ -63,5 +64,35 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
         </main>
     </div>
     <script src="Scripts/controlMenu.js"></script>
+    <script>
+// Datos de ejemplo para el gráfico
+const ctx = document.getElementById('graficoProductos').getContext('2d');
+const graficoProductos = new Chart(ctx, {
+    type: 'bar', // Tipo de gráfico (barras)
+    data: {
+        labels: ['Producto A', 'Producto B', 'Producto C', 'Producto D'], // Etiquetas de productos
+        datasets: [{
+            label: 'Cantidad disponible',
+            data: [10, 20, 15, 25], // Datos de ejemplo
+            backgroundColor: ['#4CAF50', '#FF5733', '#FFC300', '#C70039'],
+            borderColor: ['#388E3C', '#C0392B', '#FFB300', '#900C3F'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
 </body>
 </html>
